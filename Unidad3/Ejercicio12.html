@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Cronometro</title>
+    <style>
+        body{
+            background-color: #000000;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        div{border-radius: 50px;font-size:50px;padding:10px; border: 1px solid white;width: 300px;text-align: center;margin-right: auto;margin-left: auto;margin-top:5%;margin-bottom: 50px;}
+        button{margin-left:10px;margin-right: 10px; font-size:30px;padding:15px;background-color: gold;border-radius: 25%;border: 2px solid white;}
+        button:hover{box-shadow: 0 0 10px#FFFFFF;}
+    </style>
+</head>
+<body>
+   <button onclick="abrir()">Abrir ventana</button>
+   <br>
+   <br>
+   <button onclick="redi()">Redimensionar</button><br>
+   <div id="data">Dimensiones 0x0</div>
+    <script>
+        var w=0;
+        var h=0
+        function redi(){
+            w=parseInt(prompt("Introduce el nuevo ancho"));
+            h=parseInt(prompt("Introduce la nueva altura"));            
+            document.getElementById("data").innerHTML="Dimensiones "+w+"x"+h;
+        }
+        function abrir(){
+            window.open("", "", "width="+w,"height="+h)
+        }
+       
+    </script>
+</body>
+</html>
