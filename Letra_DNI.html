@@ -1,0 +1,19 @@
+<script>
+    const letras=['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+    var auxnum;
+    var num;
+    var input;
+    do{
+        input=prompt("Introduce un numero entre 0 y 99999999, cancelar para terminar");
+        if(input!=null){
+            num=parseInt(input);
+            if(isNaN(num)||num<=0||num>=99999999){
+                    alert("Error, introduce un dato valido");
+            }else{
+                auxnum=num%23;
+                alert("La letra para el numero "+num+" es "+letras[auxnum]);
+            }
+        }
+    }while(input!=null);
+    alert("Fin de programa");
+</script>

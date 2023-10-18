@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<TITLE>Ejemplo 2.11: Sentencia do..while con confirm </TITLE>
+</HEAD>
+<BODY>
+<CENTER>
+<SCRIPT LANGUAGE= "JavaScript">
+  var conta=0;
+  document.write ("<H3>Números pares </H3>");
+  do
+  { 
+    conta=conta+50;
+    for (i=conta+1-50;i<=conta;i++)
+    {
+       if (i % 2== 0)
+          document.write (i + ", ");
+       if (i % 10== 0)
+           document.write("<BR>");
+    }
+   }
+  while( confirm("¿Deseas ver los 25 siguientes?"));
+  document.write("<H3>Esto se acabó </H3>");
+</SCRIPT>
+</CENTER>
+</BODY>
+</HTML>
+

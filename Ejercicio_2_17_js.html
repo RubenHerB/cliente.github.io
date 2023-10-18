@@ -1,0 +1,16 @@
+<script>
+	do{
+		var n1= prompt("Introduce el primer numero");
+		var n2= prompt("Introduce el primer numero");
+		if(n1>=50 || n2>=50){
+			alert("Ambos numeros deben ser menores de 50");
+		}
+	}while(n1>=50 || n2>=50);
+	var menor= Math.min(n1,n2);
+	var mayor= Math.max(n1,n2);
+	do{
+		alert(mayor +" " + menor);
+		mayor-=2;
+		menor+=5;
+	}while(mayor>menor);
+</script>

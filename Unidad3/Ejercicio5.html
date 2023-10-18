@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Titulo scroll</title>
+    <script>
+        function color(){
+        document.body.style.backgroundColor=document.getElementById("col").value;
+        }
+    </script>
+</head>
+<body id="c">
+<form>
+    <select name="Color" id="col">
+      <option value="red">Rojo</option>
+      <option value="blue">Azul</option>
+      <option value="yellow">Amarillo</option>
+      <option value="green">Verde</option>
+
+    </select>
+    <button type="button"onclick="color()">Cambiar el color</button>
+</form>
+</body>
+</html>

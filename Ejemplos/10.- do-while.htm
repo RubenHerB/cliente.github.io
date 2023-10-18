@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<TITLE>Ejemplo 2.10: Sentencia do..while</TITLE>
+</HEAD>
+<BODY>
+<CENTER>
+<SCRIPT LANGUAGE= "JavaScript">
+  var nume=1, conta=0;
+  document.write ("<H3> Primeros 25 números pares </H3>");
+  do
+  { 
+    if (nume % 2== 0)
+    {
+      conta++;
+      document.write (nume + ", ");
+      if (nume % 10== 0)
+      document.write("<BR>");
+    }
+    nume++;
+  }
+  while( conta< 25)
+  document.write("<H3>Esto se acabó </H3>");
+</SCRIPT>
+</CENTER>
+</BODY>
+</HTML>
+

@@ -1,0 +1,17 @@
+<script>
+var ad=false;
+n=prompt("Introduce un numero");
+alert("Es el turno de tu compañero de adivinar");
+for (var i=0;i<5;i++){
+	a=prompt("Introduce un numero, te quedan " + (5-i) +" intentos");
+	if (a==n){
+		ad=true;
+		break;
+	}
+}
+if (ad){
+alert("Felicidades, adivinaste el numero")
+}else{
+alert("El numero era "+n);
+}
+</script>

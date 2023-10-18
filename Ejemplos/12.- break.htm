@@ -1,0 +1,24 @@
+<HTML>
+	<HEAD>
+		<TITLE>Ejemplo 2.12: Sentencia break</TITLE>
+	</HEAD>
+
+	<BODY>
+		<CENTER>
+			<SCRIPT LANGUAGE= "JavaScript">
+				document.write ("<H3> Número cuyo sumatorio pasa de 100 </H3>");
+				for (i=1; i<= 100; i++) {
+					suma= 0;
+					for (j= i; j> 0 ; j--)
+						suma= suma+j;
+					if(suma > 1000) {
+						document.write("<BR>El primer número cuyo sumatorio pasa de 1000 es " + i);
+						break;
+					}
+				}
+				document.write("<P><H3>Esto se acabó </H3>");
+			</SCRIPT>
+		</CENTER>
+	</BODY>
+</HTML>
+

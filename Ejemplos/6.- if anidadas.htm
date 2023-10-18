@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<TITLE>Ejemplo 2.6: Estructura if anidadas</TITLE>
+</HEAD>
+<BODY>
+<CENTER>
+<H1>Página sobre cualquier cosa</H1>
+<SCRIPT LANGUAGE="JavaScript">
+	var dato1 = 15;
+	var dato2 =  9;
+	var dato3 = 17;
+	document.write("<H3> El mayor valor de ");
+	document.write(+dato1 + ", " + dato2 + " y " +dato3 + "es: </H3>");
+	if (dato1 > dato2)
+		if (dato1 > dato3)
+			document.write("<H1>" + dato1+ "</H1>");
+	if (dato2 > dato1) 
+		if (dato2 > dato3)
+			document.write("<H1>" + dato2+ "</H1>");
+	if (dato3 > dato1)
+		if (dato3 > dato2)
+			document.write("<H1>" + dato3+ "</H1>");
+	document.write("<H3>.....Hecho. </H3>");
+</SCRIPT>
+</CENTER>
+<P>Aquí va el resto de la página...</P>
+</BODY>
+</HTML> 
+
+

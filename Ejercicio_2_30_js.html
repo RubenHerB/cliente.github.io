@@ -1,0 +1,37 @@
+<script>
+	var num=[parseInt(prompt("Introduce el primer numero")), parseInt(prompt("Introduce el segundo numero")), parseInt(prompt("Introduce el tercer numero")), parseInt(prompt("Introduce el tercer numero"))];
+	var gss=[0,0,0,0];
+	var c =0;
+	var cad="";
+	var cadaux="";
+	var gotit = false;
+	for (var i =1;i<=8 && !gotit;i++){
+	cadaux="";
+	alert("Intento "+i+"/8");
+	c=0;
+		var gss=[parseInt(prompt("Introduce el primer numero")), parseInt(prompt("Introduce el segundo numero")), parseInt(prompt("Introduce el tercer numero")), parseInt(prompt("Introduce el tercer numero"))];
+		for (var t =0; t<4;t++){
+			cad+=(gss[t] + " ");
+			if (gss[t]==num[t]){
+				c++;
+				cadaux+="m ";
+			}else{
+				if (gss[t]==num[0]||gss[t]==num[1]||gss[t]==num[2]||gss[t]==num[3]){
+					cadaux+="h ";
+				}else{
+					cadaux+="v ";
+				}
+			}
+			}
+			cad+="\n"+cadaux+"\n";
+			alert(cad);
+		if(c==4){
+		gotit=true;
+		}
+		}
+		if(gotit){
+			alert("Has adivinado el numero");
+		}else{
+		alert("Has perdido");
+		}
+</script>

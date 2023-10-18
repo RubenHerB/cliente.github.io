@@ -1,0 +1,22 @@
+<script>
+	var com=0;
+	var cos=false;
+	var prop=0;
+	do{
+		com=parseInt(prompt("Pulse 1 si desea cenar Costilla\nPulse 2 si desea cenar Pescado"));
+		if (com!=1 && com!=2){
+			alert("Valor incorrecto");
+		}
+	}while (com!=1 && com!=2);
+	if(com==1){
+		cos=true;
+	}
+	var pos=confirm("Desea postre");
+	var str=cos?"Costilla->pago 23 €":"Pescado->pago 15 €";
+	prop=cos?23:15;
+	str+="\n"
+	str+=pos?"Postre->el postre valió 3 €":"Sin postre ";
+	prop+=pos?3:0;
+	prop*=0.06
+	alert(str + "\n propina->"+prop);
+</script>

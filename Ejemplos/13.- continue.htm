@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE>Ejemplo 2.13: Sentencia continue</TITLE>
+</HEAD>
+<BODY>
+<CENTER>
+<SCRIPT LANGUAGE= "JavaScript">
+  var suma=1;
+  document.write ("<H3>Múltiplos de 3 entre 1 y 100</H3>");
+  for (i=1; i<= 100; i++)
+  {
+    if (i%3!= 0)
+	continue;
+    document.write(i + ", ");
+    if (suma== 5)
+    {
+      document.write("<BR>");
+      suma= 1;
+    }
+    else
+       suma++;
+  }
+  document.write("<P><H3>Esto se acabó </H3>");
+</SCRIPT>
+</CENTER>
+</BODY>
+</HTML>
+

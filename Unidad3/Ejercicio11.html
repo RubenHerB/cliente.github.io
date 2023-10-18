@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Cronometro</title>
+    <style>
+        body{
+            background-color: #000000;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        h1{margin-top: 15%;}
+        div{border-radius: 50px;font-size:50px;padding:10px; border: 1px solid white;width: 300px;text-align: center;margin-right: auto;margin-left: auto;margin-top:5%;margin-bottom: 50px;}
+        button{margin-left:10px;margin-right: 10px; font-size:30px;padding:15px;background-color: gold;border-radius: 25%;border: 2px solid white;}
+        button:hover{box-shadow: 0 0 10px#FFFFFF;}
+    </style>
+</head>
+<body>
+    <h1>CRONÓMETRO</h1><br>
+   <div id="cron">000:00:0</div>
+   <button onclick="start()">Iniciar</button>
+   <button onclick="stop()">Parar</button>
+   <button onclick="zero()">Zero</button>
+    <script>
+        var cs=0;
+        var sec=0;
+        var min=0;
+        var cronometro;
+        function start() {
+            clearInterval(cronometro);
+            cs=0;
+            sec=0;
+            min=0;
+            cronometro=setInterval(
+            function() {
+                if(sec<59){
+                    if(cs<9){
+                        cs++;
+                    }else{
+                        cs=0;
+                        sec++;
+                    }
+                }else{
+                    sec=0;
+                    min++;
+                    }
+                    document.getElementById("cron").innerHTML=("00" + min).slice(-3)+":"+("0" + sec).slice(-2)+":"+cs;
+                },10);}
+                function stop(){
+                    clearInterval(cronometro);
+                 }
+        function zero(){
+            clearInterval(cronometro);
+            document.getElementById("cron").innerHTML="000:00:0";
+        }
+    </script>
+</body>
+</html>

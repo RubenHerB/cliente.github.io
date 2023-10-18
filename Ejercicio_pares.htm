@@ -1,0 +1,14 @@
+<script>
+    var num;
+    do{
+	    num=parseInt(prompt("Introduce un numero"));
+        if(isNaN(num)||num==0){
+            alert("Error, introduce un dato valido")
+        }
+    }while(isNaN(num)||num==0);
+    if (num%2==0){
+	    alert(num+" es par");
+    }else{
+        alert(num+" es impar");
+    }
+</script>

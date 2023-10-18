@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Titulo scroll</title>
+    <script>
+        function color(){
+        document.body.style.backgroundColor=document.getElementById("col").value;
+        }
+    </script>
+</head>
+<body id="c">
+<form>
+    Color:
+        <br>
+        <input type="text" value="#FFFFFF" id="col">
+        <br>
+    <button type="button"onclick="color()">Cambiar el color</button>
+</form>
+</body>
+</html>

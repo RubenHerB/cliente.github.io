@@ -1,0 +1,10 @@
+<script>
+	var n=parseInt(prompt("Introduce un numero"));
+	var c=false;
+	for (var i=2; i<n;i++){
+		if(n%i==0){
+			c=true;
+		}
+	}
+	alert(n+(c?" no es primo":" es primo"));
+</script>

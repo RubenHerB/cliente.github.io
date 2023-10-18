@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Bombilla</title>
+    <style>
+        div {
+    display: block;
+}
+.light-bulb {
+    position: relative;
+    margin-top: 150px;
+    text-align: center;
+}
+        .light-bulb .base {
+    display: inline-block;
+    position: relative;
+    }
+    .light-bulb .base .bulb {
+    position: relative;
+    z-index: 1;
+    width: 320px;
+    height: 320px;
+    border: 3px solid #d0d0d0;
+    box-shadow: 0 0 50px #f8e287;
+    border-radius: 100%;
+    transition: all .6s;
+}
+.light-bulb .base .content {
+    position: relative;
+    z-index: 2;
+    width: 160px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: #555555;
+    margin: -25px auto 0;
+}
+.light-bulb .base .content .line {
+    width: 176px;
+    height: 14.54545px;
+    margin-bottom: 12.30769px;
+    margin-left: -8px;
+    border-radius: 20px;
+    background-color: #888888;
+}
+.light-bulb .base .footer {
+    position: relative;
+    z-index: 1;
+    width: 80px;
+    height: 53.33333px;
+    margin-top: -26.66667px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100%;
+    background-color: #333333;
+}
+    </style>
+    <script>
+        var c=0;
+        function interruptor(){
+            if(c==1){
+                c--;
+                document.getElementById("bombilla").style.backgroundColor="#ffffff";
+                document.getElementById("bombilla").style.boxShadow="0 0 50px #f8e287";
+            }else{
+                c++;
+               document.getElementById("bombilla").style.backgroundColor="#f8e287";
+               document.getElementById("bombilla").style.boxShadow="0 0 300px #fad53c";
+            } }           
+    </script>
+</head>
+<body>
+<div class="light-bulb" onclick="interruptor()">
+    <div class="base">
+      <div class="bulb" id="bombilla"></div>
+      <div class="content">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="footer"></div>
+    </div>
+  </div>
+</body>
+</html>

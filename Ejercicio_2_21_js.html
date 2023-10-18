@@ -1,0 +1,21 @@
+<script>
+	var numalum=parseInt(prompt("Introduce cuantos alumnos tiene el ciclo"));
+	var muj=0;
+	var res=0;
+	for (var i=1;i<=numalum;i++){
+		do{
+			res=parseInt(prompt("¿Cual es el sexo del alumno/a " + i + "?\n1-Mujer\n2-Hombre"));
+			switch(res){
+				case 1:
+					muj++;
+					break;
+				default:
+					alert("Error");
+				case 2:
+					break;
+			}
+		}while(res!=1 && res!=2);
+	}
+	var hom = numalum - muj;
+	alert("Hay " + numalum + "alumnos/as, de los cuales " + muj + " ( " + (muj*100/numalum)  + "%) son mujeres y "  + hom + " ( " + (hom*100/numalum)  + "%) son hombres");
+</script>

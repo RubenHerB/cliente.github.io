@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Select edades</title>
+</head>
+<body>
+    <form>
+        Edad:<br />
+        <select id="sel">
+            <option value="<20">Menor de 20 años</option>
+            <option value="20-60">Entre 20 y 60</option>
+            <option value=">60">Mayor de 60 años</option>        
+        </select>
+    </form>
+    <script>
+        function check(){
+            alert("Elementos: "+document.getElementById("sel").length
+            +"\nEdad: "+document.getElementById("sel").value);
+        }
+    </script>
+    <a href="#" onclick="check()">Ver valores</a>
+</body>
+</html>

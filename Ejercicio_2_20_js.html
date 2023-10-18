@@ -1,0 +1,25 @@
+<script>
+	var opc=0;
+	var num1=0;
+	var num2=0;
+	do{
+		opc=parseInt(prompt("1-Salir\n2-Sumatorio\n3-Factorial"));
+		switch(opc){
+			case 2:
+			num1=parseInt(prompt("Introduce el primer numero"));
+			num2=parseInt(prompt("Introduce el segundo numero"));
+			alert("El resultado es " + (num1+num2));
+				break;
+			case 3:
+			num1=parseInt(prompt("Introduce el dividendo"));
+			num2=parseInt(prompt("Introduce el divisor"));
+			alert("El resultado es " + (num1/num2));
+				break;
+			default:
+				alert("EROR!");
+			case 1:
+				break;
+		}
+	}while(opc!=1);
+	alert("Fin del programa");
+</script>

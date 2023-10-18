@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Numero random</title>
+    <script>
+
+        function ran() {
+
+            // obtenemos e valor por el numero de elemento
+
+            var porElementos = document.forms["form1"].elements[0].value;
+
+            // Obtenemos el valor por el id
+
+            var ran1 = document.getElementById("n1").value;
+            var ran2 = document.getElementById("n2").value;
+            document.getElementById("resultado").innerHTML = Math.round(Math.random()*(ran2-ran1)+ran1);
+        }
+
+    </script>
+
+
+
+    <style>
+        form {
+            width: 250px;
+            height: 180px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <h1>Numero random</h1>
+
+    <form id="form1">
+
+        Numero minimo:
+        <br>
+        <input type="text" value="1" id="n1" class="formulario">
+        <br>
+        Numero maximo:
+        <br>
+        <input type="text" value="100" id="n2" class="formulario">
+    </form>
+
+    <input type="button" value="obtener el numero" onclick="ran()">
+
+    <div id="resultado"></div>
+</body>
+</html>

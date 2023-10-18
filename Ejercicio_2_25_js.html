@@ -1,0 +1,19 @@
+<script>
+	var mon=parseInt(prompt("Introduce la cantidad apostada"));
+	var gss=0;
+	var co=0;
+	do{
+		gss=parseInt(prompt("Adivina que va a salir : \n0-Cara \n1-Cruz"));
+	}while(gss!=1 && gss !=0);
+	co=Math.floor(Math.random()*2);
+	if (co==0){
+		alert("Ha salido Cara");
+	}else{
+	alert("Ha salido Cruz");
+	}
+	if (co==gss){
+		alert("Has ganado "+(mon*2));
+	}else{
+	alert("Has perdido");
+	}
+</script>
