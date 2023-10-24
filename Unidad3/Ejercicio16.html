@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>cadnum</title>
+    <script>
+        function calcu(){
+            if(isNaN(parseInt(document.getElementById("cad").value))){
+            document.getElementById("res").innerHTML="Has introducido una cadena no numerica";
+        }else{
+            document.getElementById("res").innerHTML="Has introducido una cadena numerica";
+        }
+        }
+    </script>
+</head>
+<body id="c">
+<form>
+        <br>
+        Introduce la cadena: 
+        <input type="text" value="" id="cad">
+        <br>
+    <button type="button"onclick="calcu()">Comprobar cadena</button>
+</form>
+<br>
+<div id="res"></div>
+
+</body>
+</html>

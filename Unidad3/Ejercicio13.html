@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Area</title>
+    <script>
+        var r=0;
+        function calcu(){
+         r=parseFloat(document.getElementById("r").value);
+         if (isNaN(r)){
+            alert("ERROR!\nIntroduce un numero")
+         }else{
+            document.getElementById("res").innerHTML=Math.PI*Math.pow(Math.abs(r),2 );
+         }
+        }
+    </script>
+</head>
+<body id="c">
+<form>
+        Introduce el radio del circulo: 
+        <input type="text" value="0" id="r">
+        <br>
+    <button type="button"onclick="calcu()">Calcular el area</button>
+</form>
+<br>
+El area del circulo es <div id="res">0</div>
+</body>
+</html>

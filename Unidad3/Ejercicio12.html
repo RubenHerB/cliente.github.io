@@ -2,36 +2,52 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
-    <title>Cronometro</title>
+    <title>Ventana</title>
     <style>
         body{
             background-color: #000000;
             color: #FFFFFF;
             text-align: center;
         }
+        h1{margin-top: 15%;}
         div{border-radius: 50px;font-size:50px;padding:10px; border: 1px solid white;width: 300px;text-align: center;margin-right: auto;margin-left: auto;margin-top:5%;margin-bottom: 50px;}
-        button{margin-left:10px;margin-right: 10px; font-size:30px;padding:15px;background-color: gold;border-radius: 25%;border: 2px solid white;}
+        button{margin-top:20px;margin-left:10px;margin-right: 10px; font-size:30px;padding:15px;background-color: gold;border-radius: 25%;border: 2px solid white;}
         button:hover{box-shadow: 0 0 10px#FFFFFF;}
     </style>
-</head>
-<body>
-   <button onclick="abrir()">Abrir ventana</button>
-   <br>
-   <br>
-   <button onclick="redi()">Redimensionar</button><br>
-   <div id="data">Dimensiones 0x0</div>
     <script>
-        var w=0;
-        var h=0
-        function redi(){
-            w=parseInt(prompt("Introduce el nuevo ancho"));
-            h=parseInt(prompt("Introduce la nueva altura"));            
-            document.getElementById("data").innerHTML="Dimensiones "+w+"x"+h;
+        var w=100;
+        var h=100;
+        
+        function cambiar(){
+            w=parseInt(document.getElementById("w").value);
+            h=parseInt(document.getElementById("h").value);
+            if(isNaN(w) ||  isNaN(h) ){
+                alert("Los datos introducidos no son validos");
+           }else{
+                 document.getElementById("med").innerHTML="Medidas de la ventana "+w+"x"+h;
+            }
         }
         function abrir(){
-            window.open("", "", "width="+w,"height="+h)
+            if(h>=100&&w>=100){
+                window.open("http://www.google.com/","mywindow","location=1,toolbar=1,menubar=1,resizable=1,width="+w+",height="+h);
+            }else{
+                alert("ERROR!\nLa ventana debe ser de al menos 100x100");
+            }
         }
        
     </script>
+</head>
+<body>
+    <h1>Ventana</h1><br>
+    <div id="med">Medidas de la ventana 100x100</div>
+   <form>
+    Ancho de la ventana: 
+    <input type="text" value="100" id="w"><br>
+    Alto de la ventana: 
+    <input type="text" value="100" id="h"><br>
+    
+    </form>
+    <button onclick="cambiar()">Cambiar medidas</button>   
+    <button onclick="abrir()">Abrir</button>
 </body>
 </html>

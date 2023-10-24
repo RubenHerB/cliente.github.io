@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>eval</title>
+</head>
+<body id="c">
+<form>
+        <br>
+        Introduce la operacion: 
+        <input type="text" value="0" id="op">
+        <br>
+    <button type="button"onclick="calcu()">Calcular la operacion</button>
+</form>
+<br>
+El resultado es <div id="res">0</div>
+<script>
+    function calcu(){
+        document.getElementById("res").innerHTML=eval(document.getElementById("op").value);
+    }
+</script>
+</body>
+</html>
