@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Cronometro</title>
+    <style>
+        div{margin-left: auto;margin-right: auto;width: 20%;}
+        div:not(.grid){
+            border: 1px solid lightblue;
+            height: 20px;
+
+        }
+        .grid {         
+            
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2%;
+        padding: 10px;}      
+    button {
+        width:20px; height:20px;
+    }
+    </style>
+    <script>
+        var str="";
+        var c=0;
+        var cn=0;
+        var n=0;
+        var num=[];
+        var op=[];
+        var igual=false;
+        function añadir(a){
+            if(igual){
+                reset();
+            }
+            str+=a;
+            if(isNaN(parseInt(a))){
+                op[c]=a;
+                num[c]=n;
+                c++;
+                n=0;
+            }else{
+                n*=10;
+                n+=parseInt(a);
+            }
+            console.log(n);
+            try {
+                console.log(index("/"));
+            } catch (error) {
+            console.error(error);
+        }
+            
+            console.log(num);
+            document.getElementById('op').innerHTML=str;
+        }
+        function reset(){
+        str="";
+        c=0;
+        cn=0;
+        n=0;
+        res=0;
+        num=[];
+        op=[];
+        document.getElementById('op').innerHTML=str;
+        document.getElementById('resul').innerHTML="";
+        igual=false;
+        }
+        var inaux;
+        function operacion(){
+            num[c]=n;
+            igual=true;
+            while (num.length > 1){
+            try {
+                inaux=op.index('*');
+                try {
+                if (op.index('/')<inaux){
+                    inaux=op.index('/')
+                }}catch (e){}
+                    }catch (e){
+                      try {
+                      inaux=op.index('/');
+                        }catch (e){ 
+                            inaux=0;
+                }
+                }
+                switch(op[inaux]){
+                    case '*':
+                        num[inaux]*=num[inaux+1];
+                        break;
+                    case '/':
+                        num[inaux]/=num[inaux+1];
+                        break;
+                    case '-':
+                        num[inaux]-=num[inaux+1];
+                        break;
+                    case '+':
+                        num[inaux]+=num[inaux+1];
+                        break;
+                }
+                op.splice(inaux, 1);
+                num.splice(index+1, 1)
+            }
+        
+           
+       
+        document.getElementById('resul').innerHTML=num[0];
+    }
+    </script>
+</head>
+<body>
+    <div id="op"></div><br>
+    <div id="resul"></div><br>
+    <div class="grid">
+    <button onclick="añadir(7)">7</button>
+    <button onclick="añadir(8)">8</button>
+    <button onclick="añadir(9)">9</button>
+    <button onclick="añadir('*')">x</button>
+    <button onclick="añadir(4)">4</button>
+    <button onclick="añadir(5)">5</button>
+    <button onclick="añadir(6)">6</button>
+    <button onclick="añadir('-')">-</button>
+    <button onclick="añadir(1)">1</button>
+    <button onclick="añadir(2)">2</button>
+    <button onclick="añadir(3)">3</button>
+    <button onclick="añadir('+')">+</button>
+    <button onclick="reset()">C</button>
+    <button onclick="añadir(0)">0</button>
+    <button onclick="operacion()">=</button>
+    <button onclick="añadir('/')">/</button>
+
+    </div>
+</body>
+</html>

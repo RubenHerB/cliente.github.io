@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Numero random</title>
+    
+    
+</head>
+<body>
+<a href="#" id="l1">Pos 0,0</a><br><br>
+<a href="#" id="l1">Pos 300,0</a><br><br>
+<a href="#" id="l1">Pos 0,300</a><br><br>
+<a href="#" id="l1">Pos 300,300</a>
+
+<script type = "text/javascript" >
+    function mover(a,b){
+        window.moveTo(a,b);
+    }
+    document.getElementById('l1').addEventListener("click",mover(0,0));
+    document.getElementById('l2').addEventListener("click",mover(300,0));
+    document.getElementById('l3').addEventListener("click",mover(0,300));
+    document.getElementById('l4').addEventListener("click",mover(300,300));
+    
+    </script>
+    
+</body>
+</html>
