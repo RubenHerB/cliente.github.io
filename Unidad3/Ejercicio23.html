@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>calc</title>
+    <style>
+        div{margin-left: auto;margin-right: auto;width: 20%;}
+        div:not(.grid){
+            border: 1px solid lightblue;
+            height: 20px;
+
+        }
+        .grid {         
+            
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2%;
+        padding: 10px;}      
+    button {
+        width:40px; height:20px;
+    }
+    </style>
+    <script>
+        var c="";
+        function añadir(a){
+            if(a=='C'){
+                a='(';
+            }
+            if(a=='D'){
+                a=')';
+            }
+            c+=a;
+            if(a=="r"){
+                c="";
+                document.getElementById('resul').innerHTML="";
+            }
+            document.getElementById('op').innerHTML=c;
+        }
+        function calc(){
+            document.getElementById('op').innerHTML=eval(c);
+            c="";
+        }
+        function del(){
+            c=c.substr(0, c.length - 1);
+            document.getElementById('op').innerHTML=c;
+        }
+    </script>
+</head>
+<body>
+    <div id="op"></div><br>
+    <div class="grid">
+    <button onclick="añadir(7)">7</button>
+    <button onclick="añadir(8)">8</button>
+    <button onclick="añadir(9)">9</button>
+    <button onclick="añadir('/')">/</button>
+    <button onclick="añadir(4)">4</button>
+    <button onclick="añadir(5)">5</button>
+    <button onclick="añadir(6)">6</button>
+    <button onclick="añadir('*')">*</button>
+    <button onclick="añadir(1)">1</button>
+    <button onclick="añadir(2)">2</button>
+    <button onclick="añadir(3)">3</button>
+    <button onclick="añadir('-')">-</button>
+    <button onclick="añadir(0)">0</button>
+    <button onclick="añadir('.')">.</button>
+    <button onclick="">+/-</button><!--No sabia que tenia que hacer este asi que lo deje vacio-->
+    <button onclick="añadir('+')">+</button>
+    <button onclick="añadir('C')">(</button>
+    <button onclick="añadir('D')">)</button>
+    <button onclick="añadir(`^0.5`)">sqrt</button>
+    <button onclick="del()">&lt;-</button>
+    <button onclick="añadir('r')">C</button>
+    <button onclick="calc()">=</button>
+
+    </div>
+</body>
+</html>

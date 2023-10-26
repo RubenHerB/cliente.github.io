@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Páginas Web</title>
+</head>
+<body>
+  <h1>Páginas Web</h1>
+
+  <form id="pageForm">
+    <label for="pageSelect">Selecciona una página:</label>
+    <select id="pageSelect">
+      <option value="">Vacía</option>
+      <option value="http://www.google.es">Google</option>
+      <option value="http://www.gmail.es">Gmail</option>
+    </select>
+    <button type="button" id="openPageButton">Abrir Página</button>
+  </form>
+
+  <script>
+    document.getElementById('openPageButton').addEventListener('click', function() {
+      var selectedPage = document.getElementById('pageSelect').value;
+      if (selectedPage) {
+        window.open(selectedPage, '_blank');
+      } else {
+        alert('Selecciona una página válida');
+      }
+    });
+  </script>
+</body>
+</html>

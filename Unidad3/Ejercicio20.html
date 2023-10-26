@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ventana Emergente</title>
+  <script>
+    var c;
+    var t
+   function v() {
+    document.getElementById('comp').innerHTML="";
+      c = window.open('', '', 'width=300,height=200');
+      
+
+      c.document.open();
+      c.document.write('<html><head><title>Ventana Emergente</title></head><body>');
+      c.document.write('<button onclick="window.close()">Cerrar</button>');
+      c.document.write('</body></html>');
+      c.document.close();
+      t= setInterval(cc, 500);
+    }
+    
+     
+
+function cc() {
+    if (c.closed) {
+        document.getElementById('comp').innerHTML="La ventana se ha cerrado";
+        clearInterval(t);
+    }
+}
+  </script>
+</head>
+<body>
+<div id="comp"></div>
+  <button onclick="v()">Abrir Ventana Emergente</button>  
+</body>
+</html>

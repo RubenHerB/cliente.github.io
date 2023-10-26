@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Información de la Página</title>
+</head>
+<body>
+  <h1>Información de la Página</h1>
+  URL completa: <div id="url"></div></br>
+  Pathname: <div id="pathname"></div></br>
+  Protocolo: <div id="protocol"></div></br>
+
+  <script>
+    document.getElementById('url').textContent = window.location.href;
+    document.getElementById('pathname').textContent = window.location.pathname;
+    document.getElementById('protocol').textContent = window.location.protocol;
+  </script>
+</body>
+</html>
