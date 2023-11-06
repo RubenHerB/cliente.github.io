@@ -4,54 +4,82 @@
     <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
     <title>Calculadora</title>
     <style>
-        div{margin-left: auto;margin-right: auto;width: 20%;}
+        div{margin-left: auto;margin-right: auto;width: 20%;
+        
+        }
         div:not(.grid){
             border: 1px solid lightblue;
-            height: 20px;
-
+            height: 50px;
+            font-size: 40px;
+           overflow-x: auto;
+           overflow-y: hidden;
         }
-        .grid {         
-            
+        div:not(.grid)::-webkit-scrollbar {
+            height: 5px;
+        }
+
+            /* Track */
+        div:not(.grid)::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+/* Handle */
+        div:not(.grid)::-webkit-scrollbar-thumb {
+            background: lightblue;
+        }
+
+/* Handle on hover */
+         div:not(.grid)::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .grid {      
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 2%;
+        gap: 4%;
         padding: 10px;}      
     button {
-        width:20px; height:20px;
+        width:100%; aspect-ratio: 3/2;
     }
     </style>
     <script>
+        
         var str="";
         var num=[];
         var op=[];
+        var c=0;
         var igual=false;
-        function añadir(a){
+        var n=0;
+        function anadir(a){            
             if(igual){
                 reset();
             }
             str+=a;
             if(isNaN(parseInt(a))){
-                op.push=a;
-                num.push=n;
+                op[c]=a;
+                num[c]=n;
                 n=0;
+                c++;
             }else{
                 n*=10;
                 n+=parseInt(a);
             }
             
             document.getElementById('op').innerHTML=str;
+            document.getElementById("op").scrollLeft = document.getElementById("op").scrollWidth;
         }
         function reset(){
         str="";
         num=[];
         op=[];
-        document.getElementById('op').innerHTML=str;
+        n=0;
+        c=0;
+        document.getElementById('op').innerHTML="";
         document.getElementById('resul').innerHTML="";
         igual=false;
         }        
         function operacion(){
             var inaux=0;
-            num.push=n;
+            num[c]=n;
             igual=true;
             while (num.length > 1){
                 inaux=op.indexOf('*');
@@ -81,31 +109,89 @@
                 }
                 op.splice(inaux, 1);
                 num.splice(inaux+1, 1);
-            }        
+            }    
+            if(isNaN(num[0])){
+                num[0]="Error de sintaxis";
+            }    
         document.getElementById('resul').innerHTML=num[0];
     }
+
+
+
+
+
+    document.onkeydown = function (e) {
+  e = e || window.event;
+  switch (e.which || e.keyCode) {
+        case 13 : 
+            operacion();//Your Code Here (13 is ascii code for 'ENTER')
+            break;
+        case 48 : 
+            anadir(0);
+            break;
+        case 49 : 
+            anadir(1);
+            break;
+        case 50 : 
+            anadir(2);
+            break;
+        case 51 : 
+            anadir(3);
+            break;
+        case 52 : 
+            anadir(4);
+            break;
+        case 53 : 
+            anadir(5);
+            break;
+        case 54 : 
+            anadir(6);
+            break;
+        case 55 : 
+            anadir(7);
+            break;
+        case 56 : 
+            anadir(8);
+            break;
+        case 57 : 
+            anadir(9);
+            break;
+        case 42 : 
+            anadir('*');
+            break;
+        case 43 : 
+            anadir('+');
+            break;
+        case 45 : 
+            anadir('-');
+            break;
+        case 47 : 
+            anadir('-');
+            break;
+  }
+}
     </script>
 </head>
 <body>
     <div id="op"></div><br>
     <div id="resul"></div><br>
     <div class="grid">
-    <button onclick="añadir(7)">7</button>
-    <button onclick="añadir(8)">8</button>
-    <button onclick="añadir(9)">9</button>
-    <button onclick="añadir('*')">x</button>
-    <button onclick="añadir(4)">4</button>
-    <button onclick="añadir(5)">5</button>
-    <button onclick="añadir(6)">6</button>
-    <button onclick="añadir('-')">-</button>
-    <button onclick="añadir(1)">1</button>
-    <button onclick="añadir(2)">2</button>
-    <button onclick="añadir(3)">3</button>
-    <button onclick="añadir('+')">+</button>
+    <button onclick="anadir(7)">7</button>
+    <button onclick="anadir(8)">8</button>
+    <button onclick="anadir(9)">9</button>
+    <button onclick="anadir('*')">x</button>
+    <button onclick="anadir(4)">4</button>
+    <button onclick="anadir(5)">5</button>
+    <button onclick="anadir(6)">6</button>
+    <button onclick="anadir('-')">-</button>
+    <button onclick="anadir(1)">1</button>
+    <button onclick="anadir(2)">2</button>
+    <button onclick="anadir(3)">3</button>
+    <button onclick="anadir('+')">+</button>
     <button onclick="reset()">C</button>
-    <button onclick="añadir(0)">0</button>
+    <button onclick="anadir(0)">0</button>
     <button onclick="operacion()">=</button>
-    <button onclick="añadir('/')">/</button>
+    <button onclick="anadir('/')">/</button>
 
     </div>
 </body>
