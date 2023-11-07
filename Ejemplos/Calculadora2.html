@@ -5,8 +5,9 @@
     <title>Calculadora</title>
     <style>
         div{margin-left: auto;margin-right: auto;width: 20%;
-        
+        color:white;
         }
+        html{background-color: hsl(0, 0%, 17%);}
         div:not(.grid){
             border: 1px solid lightblue;
             height: 50px;
@@ -38,7 +39,7 @@
         gap: 4%;
         padding: 10px;}      
     button {
-        width:100%; aspect-ratio: 3/2;
+        width:100%; aspect-ratio: 3/2;border-radius: 10px; background-color: #646464;color: white;
     }
     </style>
     <script>
@@ -53,7 +54,7 @@
             if(igual){
                 reset();
             }
-            str+=a;
+            
             if(isNaN(parseInt(a))){
                 op[c]=a;
                 num[c]=n;
@@ -63,7 +64,7 @@
                 n*=10;
                 n+=parseInt(a);
             }
-            
+            str+=a;
             document.getElementById('op').innerHTML=str;
             document.getElementById("op").scrollLeft = document.getElementById("op").scrollWidth;
         }
@@ -126,47 +127,61 @@
         case 13 : 
             operacion();//Your Code Here (13 is ascii code for 'ENTER')
             break;
+        case 8:
+        case 46:
+            reset();
+            break;
         case 48 : 
+        case 96 :
             anadir(0);
             break;
         case 49 : 
+        case 97 :
             anadir(1);
             break;
         case 50 : 
+        case 98 :
             anadir(2);
             break;
-        case 51 : 
+        case 51 :
+        case 99 : 
             anadir(3);
             break;
         case 52 : 
+        case 100 :
             anadir(4);
             break;
         case 53 : 
+        case 101 :
             anadir(5);
             break;
         case 54 : 
+        case 102 :
             anadir(6);
             break;
         case 55 : 
+        case 103 :
             anadir(7);
             break;
         case 56 : 
+        case 104 :
             anadir(8);
             break;
         case 57 : 
+        case 105 :
             anadir(9);
             break;
-        case 42 : 
+        case 106 : 
             anadir('*');
             break;
-        case 43 : 
+        case 107: 
             anadir('+');
             break;
-        case 45 : 
+        case 109 : 
             anadir('-');
             break;
-        case 47 : 
-            anadir('-');
+        case 111 : 
+            anadir('/');
             break;
   }
 }

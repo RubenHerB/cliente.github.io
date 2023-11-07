@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+     var t="Titulo scroll largo 123456789 ";
+     function sc(){
+        document.title =t;
+        t=t.substring(1,t.length)+t.charAt(0);
+     setTimeout('sc()',100);
+     }
+
+     document.onkeydown = function (e) {
+  e = e || window.event;
+  if(e.keyCode==13){
+    sc();
+  }
+    }
+    </script>
+    <button type="button" onclick="sc()">Mover titulo</button>
+</body>
+</html>
