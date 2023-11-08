@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8" />
+    <title>Numero random</title>
+</head>
+<body>
+<form action="#" id="f">
+    Escoje la figura:
+    <select id="s">
+        <option value="3">Triangulo</option>
+        <option value="4">Cuadrado</option>
+        <option value="5">Poligono regular</option>
+    </select><br>   
+    <button type="button" onclick="sf()">Seleccionar figura</button><br>
+    <p id="nlt"></p>
+    <input type="hidden" id="nl">
+    <br><br>
+    <button hidden="hidden" id="bnl" onclick="snl()">Seleccionar numero de lados</button>
+    
+    <p id="llt"></p>
+    <input type="hidden" id="ll">
+    <br><br>
+</form>
+<button hidden="hidden" type="button" id="calc" onclick="calc()">Calcular perimetro</button>
+
+
+
+
+<script>
+    /*function calcp(n){
+    var l=parseFloat(prompt("Introduce la longitud del lateral"));
+    if(isNaN(l)||l<=0){
+        alert("Introduce un valor correcto (numeros enteros o decimales mayores de 0)");
+    }else{
+    alert("El perimetro es "+l*n);
+}
+   } 
+
+   function  fnlp(){//funcion para conseguir rl numero de lados
+    var ln=parseInt(document.getElementById("s").value);
+    if(ln==5){
+        ln =parseInt(prompt("Introduce el numero de lados del poligono regular"));
+    }
+    if(isNaN(ln)||ln<=2){
+        alert("Introduce un valor correcto (numeros enteros mayores de 2)");
+    }else{
+    calcp(ln);}
+   }*/
+   var nl=0;
+   var l=0;
+    function sf(){
+        nl=parseInt(document.getElementById("s").value);
+    if(nl==5){
+        document.getElementById("nlt").innerHTML="Introduzca el numero de lados del poligono regular:";
+        document.getElementById("nl").type="text";
+        document.getElementById("bnl").removeAttribute("hidden");
+
+        document.getElementById("llt").innerHTML="";
+        document.getElementById("ll").type="hidden";
+        document.getElementById("calc").setAttribute("hidden","hidden");
+    }else{
+        document.getElementById("llt").innerHTML="Introduzca la longitud de los lados:";
+        document.getElementById("ll").type="text";
+        document.getElementById("calc").removeAttribute("hidden");
+
+        document.getElementById("nlt").innerHTML="";
+        document.getElementById("nl").type="hidden";
+        document.getElementById("bnl").setAttribute("hidden","hidden");
+    }
+    }
+
+    function snl(){
+        var anl=parseInt(document.getElementById("nl").value);
+        if(isNaN(anl)||anl<=2){
+            alert("Introduce un valor correcto (numeros enteros mayores de 2)");
+        }else{
+            nl=anl;
+        document.getElementById("llt").innerHTML="Introduzca la longitud de los lados:";
+        document.getElementById("ll").type="text";
+        document.getElementById("calc").removeAttribute("hidden");
+    }}
+
+    function calc(){
+        l=parseFloat(document.getElementById("ll").value);
+        if(isNaN(l)||l<=0){
+            alert("Introduce un valor correcto (numeros enteros o decimales mayores de 0)");
+        }else{
+            alert("El perimetro es "+l*nl);
+        }
+    }
+</script>
+</body>
+</html>
