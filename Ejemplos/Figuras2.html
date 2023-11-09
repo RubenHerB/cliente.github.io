@@ -9,8 +9,8 @@
     Escoje la figura:
     <select id="s">
         <option value="3">Triangulo</option>
-        <option value="4">Cuadrado</option>
-        <option value="5">Poligono regular</option>
+        <option value="4">Cuadrilatero</option>
+        <option value="5">Poligono</option>
     </select><br>   
     <button type="button" onclick="sf()">Seleccionar figura</button><br>
     <p id="nlt"></p>
@@ -59,6 +59,7 @@
                 document.getElementById("lados").innerHTML+="Introduzca la longitud del lado "+(i+1)+"<br><input type=\"text\" id=\"l"+i+"\"><br>";
     }}
     function calc(){
+        lt=0;
         var l;
         var comp=false;
         for (var i=0;i<nl;i++){
