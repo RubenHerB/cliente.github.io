@@ -13,12 +13,11 @@
         <option value="5">Poligono regular</option>
     </select><br>   
     <button type="button" onclick="sf()">Seleccionar figura</button><br>
-    <br><br>
-    <button hidden="hidden" id="bnl" onclick="snl()">Seleccionar numero de lados</button>
     <p id="nlt"></p>
     <input type="hidden" id="nl">
     <br><br>
     <button hidden="hidden" id="bnl" onclick="snl()">Seleccionar numero de lados</button>
+    <div id="lados"></div>
 </form>
 <button hidden="hidden" type="button" id="calc" onclick="calc()">Calcular perimetro</button>
 <script>
@@ -50,8 +49,7 @@
             alert("Introduce un valor correcto (numeros enteros mayores de 2)");
         }else{
             nl=anl;
-            for(var i=0;i<nl;i++){
-                document.getElementById("lados").write("Introduzca la longitud del lado"+i+"<br><input type=\"text\" id=\"l"+i+"\">");
+            
         document.getElementById("llt").innerHTML="Introduzca la longitud de los lados:";
         document.getElementById("ll").type="text";
 
@@ -59,8 +57,13 @@
 
 
         document.getElementById("calc").removeAttribute("hidden");
-    }}}
+    }}
 
+    function generar_textbox_lados(n){
+        for(var i=0;i<n;i++){
+                document.getElementById("lados").write("Introduzca la longitud del lado "+(i+1)+"<br><input type=\"text\" id=\"l"+i+"\"><br>");
+
+    }
     function calc(){
         l=parseFloat(document.getElementById("ll").value);
         if(isNaN(l)||l<=0){
