@@ -48,11 +48,9 @@
         if(isNaN(anl)||anl<=2){
             alert("Introduce un valor correcto (numeros enteros mayores de 2)");
         }else{
+            document.getElementById("lados").innerHTML="";
             nl=anl;
-
-
-
-
+            generar_textbox_lados(nl);
         document.getElementById("cal").removeAttribute("hidden");
     }}
 
