@@ -19,7 +19,7 @@
     <button hidden="hidden" id="bnl" onclick="snl()">Seleccionar numero de lados</button>
     <div id="lados"></div>
 </form>
-<button hidden="hidden" type="button" id="calc" onclick="calc()">Calcular perimetro</button>
+<button hidden="hidden" type="button" id="cal" onclick="calc()">Calcular perimetro</button>
 <script>
    var nl=0;
    var l=0;
@@ -33,10 +33,10 @@
 
         document.getElementById("llt").innerHTML="";
         document.getElementById("ll").type="hidden";
-        document.getElementById("calc").setAttribute("hidden","hidden");
+        document.getElementById("cal").setAttribute("hidden","hidden");
     }else{
         generar_textbox_lados(nl);
-        document.getElementById("calc").removeAttribute("hidden");
+        document.getElementById("cal").removeAttribute("hidden");
 
         document.getElementById("nlt").innerHTML="";
         document.getElementById("nl").type="hidden";
