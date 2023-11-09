@@ -34,7 +34,7 @@
         document.getElementById("ll").type="hidden";
         document.getElementById("calc").setAttribute("hidden","hidden");
     }else{
-        
+        generar_textbox_lados(nl);
 
         document.getElementById("nlt").innerHTML="";
         document.getElementById("nl").type="hidden";
@@ -62,8 +62,7 @@
     function generar_textbox_lados(n){
         for(var i=0;i<n;i++){
                 document.getElementById("lados").write("Introduzca la longitud del lado "+(i+1)+"<br><input type=\"text\" id=\"l"+i+"\"><br>");
-
-    }
+    }}
     function calc(){
         l=parseFloat(document.getElementById("ll").value);
         if(isNaN(l)||l<=0){
