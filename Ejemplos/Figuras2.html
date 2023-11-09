@@ -22,7 +22,7 @@
 <button hidden="hidden" type="button" id="cal" onclick="calc()">Calcular perimetro</button>
 <script>
    var nl=0;
-   var l=0;
+   var lt=0;
     function sf(){
         document.getElementById("lados").innerHTML="";
         nl=parseInt(document.getElementById("s").value);
@@ -59,11 +59,20 @@
                 document.getElementById("lados").innerHTML+="Introduzca la longitud del lado "+(i+1)+"<br><input type=\"text\" id=\"l"+i+"\"><br>";
     }}
     function calc(){
-        l=parseFloat(document.getElementById("ll").value);
+        var l;
+        var comp=false;
+        for (var i=0;i<nl;i++){
+        l=parseFloat(document.getElementById("l"+i).value);
         if(isNaN(l)||l<=0){
-            alert("Introduce un valor correcto (numeros enteros o decimales mayores de 0)");
+            comp=true;
         }else{
-            alert("El perimetro es "+l*nl);
+        lt+=l;
+        }
+    }
+        if(comp){
+            alert("Introduce valores correctos (numeros enteros o decimales mayores de 0)");
+        }else{
+            alert("El perimetro es "+lt);
         }
     }
 </script>
