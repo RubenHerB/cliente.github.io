@@ -31,8 +31,6 @@
         document.getElementById("nl").type="text";
         document.getElementById("bnl").removeAttribute("hidden");
 
-        document.getElementById("llt").innerHTML="";
-        document.getElementById("ll").type="hidden";
         document.getElementById("cal").setAttribute("hidden","hidden");
     }else{
         generar_textbox_lados(nl);
@@ -51,14 +49,11 @@
             alert("Introduce un valor correcto (numeros enteros mayores de 2)");
         }else{
             nl=anl;
-            
-        document.getElementById("llt").innerHTML="Introduzca la longitud de los lados:";
-        document.getElementById("ll").type="text";
 
 
 
 
-        document.getElementById("calc").removeAttribute("hidden");
+        document.getElementById("cal").removeAttribute("hidden");
     }}
 
     function generar_textbox_lados(n){
