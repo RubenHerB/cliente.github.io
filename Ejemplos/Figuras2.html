@@ -24,6 +24,7 @@
    var nl=0;
    var l=0;
     function sf(){
+        document.getElementById("lados").innerHTML="";
         nl=parseInt(document.getElementById("s").value);
     if(nl==5){
         document.getElementById("nlt").innerHTML="Introduzca el numero de lados del poligono regular:";
@@ -35,6 +36,7 @@
         document.getElementById("calc").setAttribute("hidden","hidden");
     }else{
         generar_textbox_lados(nl);
+        document.getElementById("calc").removeAttribute("hidden");
 
         document.getElementById("nlt").innerHTML="";
         document.getElementById("nl").type="hidden";
@@ -43,7 +45,7 @@
     }
 
     function snl(){
-
+        
         var anl=parseInt(document.getElementById("nl").value);
         if(isNaN(anl)||anl<=2){
             alert("Introduce un valor correcto (numeros enteros mayores de 2)");
