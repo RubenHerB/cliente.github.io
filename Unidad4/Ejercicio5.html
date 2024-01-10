@@ -1,0 +1,15 @@
+<table>
+    <tr><th>n</th><th>n!</th></tr>
+<script>
+    var fac=[[0],[0]];
+    var s=1;
+    for (var i = 1; i <=25;i++) {
+        s*=i;
+        fac[0][i-1]=i;
+        fac[1][i-1]=s;
+    }
+    for (var j =0; j <25; j++) {
+        document.write("<tr><td>"+fac[0][j]+"</td><td>"+fac[1][j]+"</td></tr>");
+    }
+</script>
+</table>
