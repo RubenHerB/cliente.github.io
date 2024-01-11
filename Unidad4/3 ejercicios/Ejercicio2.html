@@ -169,20 +169,23 @@
 
         function generar_palabra_oculta(ar){
             document.getElementById("tema").innerHTML=ar[0];
-            document.getElementById("palabra").innerHTML="<u id=\""+ar[2][0]+"\">*</u>";
+            document.getElementById("palabra").innerHTML="<u id=\"l0\">*</u>";
             for (var i=1;i<ar[2].length;i++){
-                document.getElementById("palabra").innerHTML+=" <u id=\""+ar[2][i]+"\">*</u>";
+                document.getElementById("palabra").innerHTML+=" <u id=\"l"+i+"\">*</u>";
             }
         }   
 
-        function cambiar_letra(l){
-            document.querySelectorAll("[id='"+l+"']").innerHTML=l;
-            document.querySelectorAll("[id='"+l+"']").style.color="green";
+        function cambiar_letra(str,l){
+            for(var i=0;i<str[2].length;i++){
+                if(str[2][i]==l){	
+            document.getElementById("l"+i).innerHTML=l;
+            document.getElementById("l"+i).style.color="green";
+                }
         }
+    }
         var plb=generar_palabra();
         generar_palabra_oculta(plb);
-        cambiar_letra("a");
-        
+        cambiar_letra(pbl,"a");
 
         console.log(plb);
     </script>
