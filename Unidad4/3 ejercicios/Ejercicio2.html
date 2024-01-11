@@ -218,6 +218,8 @@
         document.getElementById("mensaje").style.color="green";
     }
     function reiniciar(){
+        t=[1,30,0]; 
+        timer=setInterval(r,10);
         document.getElementById("fallos").innerHTML="";
         intentos=5;
         plb=generar_palabra();
@@ -260,7 +262,7 @@
                 document.getElementById("pierna2").style.display="inline-block";
                 break;
             case 0:
-                loose();
+                loose(plb);
                 break;
     }
     var err=document.getElementById("fallos");
@@ -268,7 +270,8 @@
         err.innerHTML+=(" "+str+" ");
     }
 }
-function loose(){
+function loose(ar){
+    clearInterval(timer);
     document.getElementById("cabeza").style.border="4px solid red";
                 document.getElementById("torso").style.backgroundColor="red";
                 document.getElementById("brazos").style.backgroundColor="red";
@@ -276,7 +279,7 @@ function loose(){
                 document.getElementById("pierna2").style.backgroundColor="red";
                 document.getElementById("input").style.display="none";
                 document.getElementById("final").style.display="block";
-                document.getElementById("mensaje").innerHTML="Has perdido";
+                document.getElementById("mensaje").innerHTML="Has perdido, la palabra era: "+ar[1];
                 document.getElementById("mensaje").style.color="red";
 }
 
@@ -313,19 +316,12 @@ document.getElementById("letrainput").value="";
 
 
 
-        var n=70;
-        if (!isNaN(n)){
-        t=[0,0,0];
-        t[1]=Math.ceil((n*1.5)+Math.pow(1.25,(n+1)));
-        if(t[1]>=60){
-            t[0]=Math.trunc(t[1]/60);
-            t[1]-=(Math.trunc(t[1]/60)*60);
-        }}
+        t=[1,30,0];     
         
         function r(){  
         t[2]--;
         if(t[0]==0&&t[1]==0&&t[2]==0){
-            loose();           
+            loose(plb);  
         }
         if(t[2]<0){
             t[2]=99;
