@@ -143,6 +143,13 @@
         const palabras=[["Gente",["humanidad","humano","persona","gente","hombre","mujer","bebé","niño","niña","adolescente","adulto","adulta","anciano","anciana","don","doña","señor","señora","caballero","dama","individuo"]]];
         palabras.push(["Cuerpo humano y salud",["cuerpo","pierna","pie","talón","espinilla","rodilla","muslo","cabeza","cara","boca","labio","diente","ojo","nariz","barba","bigote","cabello","oreja","cerebro","estómago","brazo","codo","hombro","uña","mano","muñeca","palma","dedo","trasero","culo","cola","glúteos","abdomen","hígado","músculo","cuello","corazón","mente","alma","espíritu","pecho","cintura","cadera","espalda","sangre","carne","piel","hueso","resfriado","gripe","diarrea","salud","enfermedad"]]);
         palabras.push(["Familia y otras relaciones",["familia","amigo","amiga","conocido","conocida","colega","pareja","esposo","esposa","matrimonio","amor","padre","madre","hermano","hermana","hijo","hija","abuelo","abuela","bisabuelo","bisabuela","nieto","nieta","bisnieto","bisnieta","primo","prima","tío","tía","sobrino","sobrina"]]);
+        palabras.push(["Sociedad",["sociedad","comunidad","reunión","encuentro","estructura","administración","organización","asociación","empresa","equipo","autoridad","cargo","campaña","club","comisión","congreso","consejo","partido","país","nación","gobierno","estado","provincia","departamento","municipio","democracia","dictadura","política","político","presidente","ministro","director","parlamentario","congresista","senador","diputado","representante","gobernador","intendente","alcalde","policía","bomberos","capital","ciudad","población","pueblo","villa","obligación","libertad","derecho","permiso","prohibición","constitución","ley","decreto","norma"]]);
+        
+        function generar_palabra(){
+            var r1=Math.floor(Math.random() *palabras.length);
+            console.log(r1);
+        }
+        generar_palabra();
     </script>
     </body>
 </head>
