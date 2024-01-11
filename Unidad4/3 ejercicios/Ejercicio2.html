@@ -167,7 +167,7 @@
             return [tema,palabra,palabraar];
         }
 
-        function generar_palabra_oculta(ar){
+        function generar_espacios(ar){
             document.getElementById("tema").innerHTML=ar[0];
             document.getElementById("palabra").innerHTML="<u id=\"l0\">*</u>";
             for (var i=1;i<ar[2].length;i++){
@@ -175,19 +175,21 @@
             }
         }   
 
-        function cambiar_letra(str,l){
-            for(var i=0;i<str[2].length;i++){
-                if(str[2][i]==l){	
+        function cambiar_letra(ar,l){
+            for(var i=0;i<ar[2].length;i++){
+                if(ar[2][i]==l){	
             document.getElementById("l"+i).innerHTML=l;
             document.getElementById("l"+i).style.color="green";
                 }
         }
     }
+
         var plb=generar_palabra();
-        generar_palabra_oculta(plb);
+        generar_espacios(plb);
+        console.log(plb);
         cambiar_letra(pbl,"a");
 
-        console.log(plb);
+        
     </script>
     </body>
 </head>
