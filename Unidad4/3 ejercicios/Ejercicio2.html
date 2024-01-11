@@ -304,6 +304,45 @@ document.getElementById("letrainput").value="";
         console.log(plb);
 
         
+
+
+
+
+
+        var n=70;
+      if (!isNaN(n)){
+        t=[0,0,0];
+        t[1]=Math.ceil((n*1.5)+Math.pow(1.25,(n+1)));
+        if(t[1]>=60){
+          t[0]=Math.trunc(t[1]/60);
+          t[1]-=(Math.trunc(t[1]/60)*60);
+        }}
+        
+      function r(){  
+        t[2]--;
+        if(t[0]==0&&t[1]==0&&t[2]==0){
+          localStorage.setItem("timer0", 0);
+          localStorage.setItem("timer1", 0);
+          localStorage.setItem("timer2", 0);
+          window.location.href = "Fallo.php";
+        }
+        if(t[2]<0){
+          t[2]=99;
+          t[1]--;
+          if(t[1]<0){
+            t[1]=59;
+            t[2]--;
+        }}
+        
+        document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
+    }
+    var timer=setInterval(r,10);
+    function salida(){
+      clearInterval(timer);
+      localStorage.setItem("timer0", t[0]);
+      localStorage.setItem("timer1", t[1]);
+      localStorage.setItem("timer2", t[2]);
+    }
     </script>
     </body>
 </head>
