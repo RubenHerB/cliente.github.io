@@ -150,9 +150,11 @@
         }
 
         function generar_palabra(){
-            let r1=;
-            let r2=
+            let r1=randIntStr(palabras);
+            let r2=randIntStr(palabras[r1][1]);
             console.log(r1);
+            console.log(r2);
+            console.log(palabras[r1][1][r2]);
         }
         generar_palabra();
     </script>
