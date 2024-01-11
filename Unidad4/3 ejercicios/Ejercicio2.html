@@ -166,15 +166,19 @@
         }
 
         function generar_palabra_oculta(ar){
-            document.getElementById("tema").innerHTML=ar[1];
-            document.getElementById
+            document.getElementById("tema").innerHTML=ar[0];
+            document.getElementById("palabra").innerHTML="<u id=\""+ar[2][0]+"\"> </u>";
+            for (var i=1;i<ar[2].length;i++){
+                document.getElementById("palabra").innerHTML+=" <u id=\""+ar[2][i]+"\"> </u>";
+            }
         }   
 
         var plb=generar_palabra();
+        generar_palabra_oculta(plb);
 
         
 
-        console.log(generar_palabra());
+        console.log(plb);
     </script>
     </body>
 </head>
