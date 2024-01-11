@@ -183,11 +183,17 @@
                 }
         }
     }
+    function cambiar_palabra(ar){
+        for(var i=0;i<ar[2].length;i++){
+            document.getElementById("l"+i).innerHTML=ar[2][i];
+            document.getElementById("l"+i).style.color="green";
+    }
+}
 
         var plb=generar_palabra();
         generar_espacios(plb);
         console.log(plb);
-        cambiar_letra(pbl,"a");
+        cambiar_palabra(plb);
 
         
     </script>
