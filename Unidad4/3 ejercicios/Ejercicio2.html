@@ -175,9 +175,13 @@
             }
         }   
 
+        function cambiar_letra(l){
+            document.querySelectorAll("[id='"+l+"']").innerHTML=l;
+            document.querySelectorAll("[id='"+l+"']").style.color="green";
+        }
         var plb=generar_palabra();
         generar_palabra_oculta(plb);
-
+        cambiar_letra("a");
         
 
         console.log(plb);
