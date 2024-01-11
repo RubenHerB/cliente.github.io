@@ -260,7 +260,16 @@
                 document.getElementById("pierna2").style.display="inline-block";
                 break;
             case 0:
-                document.getElementById("cabeza").style.border="4px solid red";
+                loose();
+                break;
+    }
+    var err=document.getElementById("fallos");
+    if(!err.innerHTML.includes(" "+str+" ")){
+        err.innerHTML+=(" "+str+" ");
+    }
+}
+function loose(){
+    document.getElementById("cabeza").style.border="4px solid red";
                 document.getElementById("torso").style.backgroundColor="red";
                 document.getElementById("brazos").style.backgroundColor="red";
                 document.getElementById("pierna1").style.backgroundColor="red";
@@ -269,12 +278,6 @@
                 document.getElementById("final").style.display="block";
                 document.getElementById("mensaje").innerHTML="Has perdido";
                 document.getElementById("mensaje").style.color="red";
-                break;
-    }
-    var err=document.getElementById("fallos");
-    if(!err.innerHTML.includes(" "+str+" ")){
-        err.innerHTML+=(" "+str+" ");
-    }
 }
 
 function letra(ar){
@@ -322,8 +325,7 @@ document.getElementById("letrainput").value="";
         function r(){  
         t[2]--;
         if(t[0]==0&&t[1]==0&&t[2]==0){
-            loose();
-            
+            loose();           
         }
         if(t[2]<0){
             t[2]=99;
