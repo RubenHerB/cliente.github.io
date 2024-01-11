@@ -51,8 +51,7 @@
                 aspect-ratio: 1/1;
                 border-radius: 50%;
                 border:4px solid black;
-                display: inline-block;
-                visibility:hidden;;
+                display: none;
                 position: absolute;
                 top:100px;
                 left :235.5px;
@@ -62,8 +61,7 @@
         width: 6px;
         height:100px;
         background-color: black;
-        display: inline-block;
-                visibility:hidden;;
+        display: none;
         position: absolute;
         top:154px;
         left :262px;
@@ -73,8 +71,7 @@
             width: 6px;
         height:100px;
         background-color: black;
-        display: inline-block;
-                visibility:hidden;;
+        display: none;
         position: absolute;
         top:154px;
         left :262px;
@@ -85,8 +82,7 @@
             width: 6px;
         height:50px;
         background-color: black;
-        display: inline-block;
-                visibility:hidden;;
+        display: none;
         position: absolute;
         top:248px;
         left :250px;
@@ -97,8 +93,7 @@
             width: 6px;
         height:50px;
         background-color: black;
-        display: inline-block;
-                visibility:hidden;;
+        display: none;
         position: absolute;
         top:248px;
         left :275px;
@@ -108,6 +103,10 @@
         u { 
         text-decoration: underline;
         font-size: 100px;
+        }
+        .fallos{
+            font-size: 100px;
+            color: red;
         }
 
         </style>
@@ -127,26 +126,28 @@
             <span class="brazos" id="brazos"></span>
             <span class="pierna1" id="pierna1"></span>
     <span class="pierna2" id="pierna2"></span>
-    <h3 class="intentos">Te quedan 5 intentos</h3>
+    <h3 class="intentos" id="intentos">Te quedan 5 intentos</h3>
         </div>
         <h1 id="palabra"></h1>
         <div id="input">
         <form>
             Introduce una letra o una palabra en su campo para intentar adivinarla.<br><br>
-            Letra: <input type="text" id="letrainput" maxlength="1" style="margin-right: 20px;"">     
-            Palabra <input type="text" id="palabrainput">
+            Letra: <input type="text" id="letrainput" maxlength="1" style="margin-right: 20px;"" pattern="[a-zA-Z]*">     
+            Palabra <input type="text" id="palabrainput" minlength="3" pattern="[a-zA-Z]*">
         </form><br><br>
-        <button onclick="letra()">Adivinar letra</button>  <button onclick="palabra(plb)" style="margin-left: 20px;">Adivinar palabra</button>
+        <button onclick="letra(plb)">Adivinar letra</button>  <button onclick="palabra(plb)" style="margin-left: 20px;">Adivinar palabra</button>
+        <h2>Tus errores:</h2>
+        <div id="fallos" class="fallos"></div>
     </div>
-    <div id="final" style="visibility: hidden;">
+    <div id="final" style="display: none;">
     <h1 id="mensaje"></h1>
     <button onclick="reiniciar()">Reiniciar</button>
     </div>
     <script>
-        const palabras=[["Gente",["humanidad","humano","persona","gente","hombre","mujer","bebé","niño","niña","adolescente","adulto","adulta","anciano","anciana","don","doña","señor","señora","caballero","dama","individuo"]]];
-        palabras.push(["Cuerpo humano y salud",["cuerpo","pierna","pie","talón","espinilla","rodilla","muslo","cabeza","cara","boca","labio","diente","ojo","nariz","barba","bigote","cabello","oreja","cerebro","estómago","brazo","codo","hombro","uña","mano","muñeca","palma","dedo","trasero","culo","cola","glúteos","abdomen","hígado","músculo","cuello","corazón","mente","alma","espíritu","pecho","cintura","cadera","espalda","sangre","carne","piel","hueso","resfriado","gripe","diarrea","salud","enfermedad"]]);
-        palabras.push(["Familia y otras relaciones",["familia","amigo","amiga","conocido","conocida","colega","pareja","esposo","esposa","matrimonio","amor","padre","madre","hermano","hermana","hijo","hija","abuelo","abuela","bisabuelo","bisabuela","nieto","nieta","bisnieto","bisnieta","primo","prima","tío","tía","sobrino","sobrina"]]);
-        palabras.push(["Sociedad",["sociedad","comunidad","reunión","encuentro","estructura","administración","organización","asociación","empresa","equipo","autoridad","cargo","campaña","club","comisión","congreso","consejo","partido","país","nación","gobierno","estado","provincia","departamento","municipio","democracia","dictadura","política","político","presidente","ministro","director","parlamentario","congresista","senador","diputado","representante","gobernador","intendente","alcalde","policía","bomberos","capital","ciudad","población","pueblo","villa","obligación","libertad","derecho","permiso","prohibición","constitución","ley","decreto","norma"]]);
+        const palabras=[["Gente",["humanidad","humano","persona","gente","hombre","mujer","bebe","niño","niña","adolescente","adulto","adulta","anciano","anciana","don","doña","señor","señora","caballero","dama","individuo"]]];
+        palabras.push(["Cuerpo humano y salud",["cuerpo","pierna","pie","talon","espinilla","rodilla","muslo","cabeza","cara","boca","labio","diente","ojo","nariz","barba","bigote","cabello","oreja","cerebro","estomago","brazo","codo","hombro","uña","mano","muñeca","palma","dedo","trasero","culo","cola","gluteos","abdomen","higado","musculo","cuello","corazon","mente","alma","espiritu","pecho","cintura","cadera","espalda","sangre","carne","piel","hueso","resfriado","gripe","diarrea","salud","enfermedad"]]);
+        palabras.push(["Familia y otras relaciones",["familia","amigo","amiga","conocido","conocida","colega","pareja","esposo","esposa","matrimonio","amor","padre","madre","hermano","hermana","hijo","hija","abuelo","abuela","bisabuelo","bisabuela","nieto","nieta","bisnieto","bisnieta","primo","prima","tio","tia","sobrino","sobrina"]]);
+        palabras.push(["Sociedad",["sociedad","comunidad","reunion","encuentro","estructura","administracion","organizacion","asociacion","empresa","equipo","autoridad","cargo","campaña","club","comision","congreso","consejo","partido","pais","nacion","gobierno","estado","provincia","departamento","municipio","democracia","dictadura","politica","politico","presidente","ministro","director","parlamentario","congresista","senador","diputado","representante","gobernador","intendente","alcalde","policia","bomberos","capital","ciudad","poblacion","pueblo","villa","obligacion","libertad","derecho","permiso","prohibicion","constitucion","ley","decreto","norma"]]);
         
         function randIntStr(str) {
             return Math.floor(Math.random() *str.length);
@@ -190,18 +191,115 @@
 
     function palabra(ar){
         var adi=document.getElementById("palabrainput").value;
-        console.log(adi);
-        adi = adi.replace(/ /g, "");
+        
+        adi=adi.replace(/[^a-zA-ZñÑ]/g, "")
         adi = adi.toLowerCase();
+        console.log(adi);
+        if(adi.length==ar[1].length){
+            console.log("entro");
         if(ar[1]==adi){
+            console.log("correcto");
             cambiar_palabra(ar);
-            //win();
+            win();
         }else{
-            //error();
+            error(adi);
         }
+    }else{
+        alert("La longitud de la palabra introducida no es correcta (los numeros, caracteres especiales y espacios no cuentan como letra)");
+        document.getElementById("palabrainput").value=adi;
+    }
     }
 
+    function win(){
+        document.getElementById("input").style.display="none";
+        document.getElementById("final").style.display="block";
+        document.getElementById("mensaje").innerHTML="Felicidades, has ganado";
+        document.getElementById("mensaje").style.color="green";
+    }
+    function reiniciar(){
+        document.getElementById("fallos").innerHTML="";
+        intentos=5;
+        plb=generar_palabra();
+        plbaux=plb;
+        generar_espacios(plb);
+        aciertos=0;
+        console.log(plb);
+        document.getElementById("input").style.display="block";
+        document.getElementById("final").style.display="none";
+        document.getElementById("palabrainput").value="";
+        document.getElementById("letrainput").value="";
+        document.getElementById("intentos").innerHTML="Te quedan 5 intentos";
+        document.getElementById("cabeza").style.border="4px solid black";
+                document.getElementById("torso").style.backgroundColor="black";
+                document.getElementById("brazos").style.backgroundColor="black";
+                document.getElementById("pierna1").style.backgroundColor="black";
+                document.getElementById("pierna2").style.backgroundColor="black";
+                document.getElementById("cabeza").style.display="none";
+                document.getElementById("torso").style.display="none";
+                document.getElementById("brazos").style.display="none";
+                document.getElementById("pierna1").style.display="none";
+                document.getElementById("pierna2").style.display="none";
+    }
+
+    function error(str){
+        intentos--;
+        document.getElementById("intentos").innerHTML="Te quedan "+intentos+" intentos";
+        switch(intentos){
+            case 4:
+                document.getElementById("cabeza").style.display="inline-block";
+                break;
+            case 3:
+                document.getElementById("torso").style.display="inline-block";
+                break;
+            case 2:
+                document.getElementById("brazos").style.display="inline-block";
+                break;
+            case 1:
+                document.getElementById("pierna1").style.display="inline-block";
+                document.getElementById("pierna2").style.display="inline-block";
+                break;
+            case 0:
+                document.getElementById("cabeza").style.border="4px solid red";
+                document.getElementById("torso").style.backgroundColor="red";
+                document.getElementById("brazos").style.backgroundColor="red";
+                document.getElementById("pierna1").style.backgroundColor="red";
+                document.getElementById("pierna2").style.backgroundColor="red";
+                document.getElementById("input").style.display="none";
+                document.getElementById("final").style.display="block";
+                document.getElementById("mensaje").innerHTML="Has perdido";
+                document.getElementById("mensaje").style.color="red";
+                break;
+    }
+    var err=document.getElementById("fallos");
+    if(!err.innerHTML.includes(" "+str+" ")){
+        err.innerHTML+=(" "+str+" ");
+    }
+}
+
+function letra(ar){
+    var l=document.getElementById("letrainput").value;
+    l=l.replace(/[^a-zA-ZñÑ]/g, "")
+    l = l.toLowerCase();
+    console.log(l);
+    if(l!=""){
+    if(ar[2].includes(l)){
+        plbaux=plbaux.split(l).join("");
+        cambiar_letra(ar,l);
+        console.log(plbaux);
+        if(plbaux.length==0){
+            win();
+        }
+    }else{
+        error(l);
+    }
+}else{
+    alert("Introduce solo letras");
+}
+document.getElementById("letrainput").value="";
+}
+        var intentos=5;
         var plb=generar_palabra();
+        var plbaux=plb[1];
         generar_espacios(plb);
         console.log(plb);
 
