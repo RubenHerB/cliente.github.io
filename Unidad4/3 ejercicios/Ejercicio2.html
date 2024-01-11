@@ -190,7 +190,7 @@
 
     function palabra(ar){
         var adi=document.getElementById("palabra").value;
-        adi = adi.replace(/\s+/g, '');
+        adi = adi.split(" ").join("");
         adi = adi.toLowerCase();
         if(ar[1]==adi){
             cambiar_palabra(ar);
