@@ -152,11 +152,16 @@
         function generar_palabra(){
             let r1=randIntStr(palabras);
             let r2=randIntStr(palabras[r1][1]);
-            console.log(r1);
-            console.log(r2);
-            console.log(palabras[r1][1][r2]);
+            let tema=palabras[r1][0];
+            let palabra=palabras[r1][1][r2];
+
+            let palabraar=[];
+            for (var i=0;i<palabra.length;i++){
+                palabraar[i]=palabra.charAt(i);
+            }
+            return [tema,palabra,palabraar];
         }
-        generar_palabra();
+        console.log(generar_palabra());
     </script>
     </body>
 </head>
