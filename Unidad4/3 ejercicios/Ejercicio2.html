@@ -133,8 +133,8 @@
         <div id="input">
         <form>
             Introduce una letra o una palabra en su campo para intentar adivinarla.<br><br>
-            Letra: <input type="text" id="letra" maxlength="1" style="margin-right: 20px;"">     
-            Palabra <input type="text" id="palabra">
+            Letra: <input type="text" id="letrainput" maxlength="1" style="margin-right: 20px;"">     
+            Palabra <input type="text" id="palabrainput">
         </form><br><br>
         <button onclick="letra()">Adivinar letra</button>  <button onclick="palabra(plb)" style="margin-left: 20px;">Adivinar palabra</button>
     </div>
@@ -189,8 +189,9 @@
 }
 
     function palabra(ar){
-        var adi=document.getElementById("palabra").value;
-        adi = adi.split(" ").join("");
+        var adi=document.getElementById("palabrainput").value;
+        console.log(adi);
+        adi = adi.replace(/ /g, "");
         adi = adi.toLowerCase();
         if(ar[1]==adi){
             cambiar_palabra(ar);
