@@ -105,6 +105,9 @@
         transform: rotate(-30deg);
         }
 
+        u { 
+        text-decoration: underline;
+        }
         </style>
     <head>
     <body>
@@ -124,7 +127,7 @@
     <span class="pierna2" id="pierna2"></span>
     <h3 class="intentos">Te quedan 5 intentos</h3>
         </div>
-        <div id="palabra"></div>
+        <h1 id="palabra"></h1>
         <div id="input">
         <form>
             Introduce una letra o una palabra en su campo para intentar adivinarla.<br><br>
@@ -161,6 +164,16 @@
             }
             return [tema,palabra,palabraar];
         }
+
+        function generar_palabra_oculta(ar){
+            document.getElementById("tema").innerHTML=ar[1];
+            document.getElementById
+        }   
+
+        var plb=generar_palabra();
+
+        
+
         console.log(generar_palabra());
     </script>
     </body>
