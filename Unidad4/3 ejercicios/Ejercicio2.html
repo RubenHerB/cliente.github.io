@@ -107,7 +107,9 @@
 
         u { 
         text-decoration: underline;
+        font-size: 100px;
         }
+
         </style>
     <head>
     <body>
@@ -167,9 +169,9 @@
 
         function generar_palabra_oculta(ar){
             document.getElementById("tema").innerHTML=ar[0];
-            document.getElementById("palabra").innerHTML="<u id=\""+ar[2][0]+"\"> </u>";
+            document.getElementById("palabra").innerHTML="<u id=\""+ar[2][0]+"\">*</u>";
             for (var i=1;i<ar[2].length;i++){
-                document.getElementById("palabra").innerHTML+=" <u id=\""+ar[2][i]+"\"> </u>";
+                document.getElementById("palabra").innerHTML+=" <u id=\""+ar[2][i]+"\">*</u>";
             }
         }   
 
