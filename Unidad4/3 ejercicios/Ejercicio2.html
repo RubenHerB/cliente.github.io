@@ -136,15 +136,13 @@
             Letra: <input type="text" id="letra" maxlength="1" style="margin-right: 20px;"">     
             Palabra <input type="text" id="palabra">
         </form><br><br>
-        <button onclick="letra()">Adivinar letra</button>  <button onclick="palabra()" style="margin-left: 20px;">Adivinar palabra</button>
+        <button onclick="letra()">Adivinar letra</button>  <button onclick="palabra(plb)" style="margin-left: 20px;">Adivinar palabra</button>
     </div>
     <div id="final" style="visibility: hidden;">
     <h1 id="mensaje"></h1>
     <button onclick="reiniciar()">Reiniciar</button>
     </div>
     <script>
-        // str = str.replace(/\s+/g, '');
-        // let lowerCaseString = myString.toLowerCase();
         const palabras=[["Gente",["humanidad","humano","persona","gente","hombre","mujer","bebé","niño","niña","adolescente","adulto","adulta","anciano","anciana","don","doña","señor","señora","caballero","dama","individuo"]]];
         palabras.push(["Cuerpo humano y salud",["cuerpo","pierna","pie","talón","espinilla","rodilla","muslo","cabeza","cara","boca","labio","diente","ojo","nariz","barba","bigote","cabello","oreja","cerebro","estómago","brazo","codo","hombro","uña","mano","muñeca","palma","dedo","trasero","culo","cola","glúteos","abdomen","hígado","músculo","cuello","corazón","mente","alma","espíritu","pecho","cintura","cadera","espalda","sangre","carne","piel","hueso","resfriado","gripe","diarrea","salud","enfermedad"]]);
         palabras.push(["Familia y otras relaciones",["familia","amigo","amiga","conocido","conocida","colega","pareja","esposo","esposa","matrimonio","amor","padre","madre","hermano","hermana","hijo","hija","abuelo","abuela","bisabuelo","bisabuela","nieto","nieta","bisnieto","bisnieta","primo","prima","tío","tía","sobrino","sobrina"]]);
@@ -190,10 +188,21 @@
     }
 }
 
+    function palabra(ar){
+        var adi=document.getElementById("palabra").value;
+        adi = adi.replace(/\s+/g, '');
+        adi = adi.toLowerCase();
+        if(ar[1]==adi){
+            cambiar_palabra(ar);
+            //win();
+        }else{
+            //error();
+        }
+    }
+
         var plb=generar_palabra();
         generar_espacios(plb);
         console.log(plb);
-        cambiar_palabra(plb);
 
         
     </script>
