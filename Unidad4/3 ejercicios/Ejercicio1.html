@@ -31,9 +31,10 @@
             l.push(new obj(t));
         }
         function update(){
+            console.log(l);
             output.innerHTML="";
             for(var i=0;i<l.length;i++){
-                output.innerHTML+="<div id=\"t"+i+"\"><button id=\"b"+i+"\" onclick=\"un_done("+i+")\">Marcar</button>"+l[i].texto+"<button onclick=\"delete("+i+")\">Borrar</button></div>";
+                output.innerHTML+="<div id=\"t"+i+"\"><button id=\"b"+i+"\" onclick=\"un_done("+i+")\">Marcar</button>"+l[i].texto+"<button onclick=\"remove("+i+")\">Borrar</button></div>";
             }
         }
 
@@ -45,6 +46,11 @@
             }else{
                 alert("Introduce el nombre de la tarea para poder añadirla");
             }
+        }
+
+        function remove(i){
+            delete l[i];
+            update();
         }
 
     </script>
