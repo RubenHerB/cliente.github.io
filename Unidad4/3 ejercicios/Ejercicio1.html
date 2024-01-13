@@ -24,20 +24,21 @@
                 return false;
             }
         }
-        function add(t){
+        function add_obj(t){
             l.add(new obj(t));
         }
         function update(){
             output.innerHTML="";
             for(var i=0;i<l.length;i++){
-                output.innerHTML+="<div id=\"t"+i+"\"><button id=\"b"+i+"\" onclick=\"done("+i+")\">Marcar</button>"+l[i].texto+"<button onclick=\"delete("+i+")\">Borrar</button></div>";
+                output.innerHTML+="<div id=\"t"+i+"\"><button id=\"b"+i+"\" onclick=\"un_done("+i+")\">Marcar</button>"+l[i].texto+"<button onclick=\"delete("+i+")\">Borrar</button></div>";
             }
         }
 
         function in_add_update(){
             let t=inp();
             if(t){
-                add(t);
+                add_obj(t);
+                update();
             }else{
                 alert("Introduce el nombre de la tarea para poder añadirla");
             }
