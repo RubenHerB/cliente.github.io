@@ -9,7 +9,7 @@
     <head>
         <h1>Lista de tareas pendientes</h1>
         <form>
-            Agregar nueva tarea: <input type="text" id="input" > <button type="button" onclick="in_add_update()">Agregar</button>
+            Agregar nueva tarea: <input type="text" id="input" > <button type="button" onclick="in_add_update()">Agregar</button><button type="button" onclick="removeAll()">Borrar todos</button>
         </form>
         <div id="output"></div>
     <script>
@@ -35,6 +35,10 @@
             output.innerHTML="";
             for(var i=0;i<l.length;i++){
                 output.innerHTML+="<div id=\"t"+i+"\"><button id=\"b"+i+"\" onclick=\"un_done("+i+")\">Marcar</button>"+l[i].texto+"<button onclick=\"remove("+i+")\">Borrar</button></div>";
+                if(l[i].terminada){
+                    document.getElementById("t"+i).style.textDecoration="line-through";
+                    document.getElementById("b"+i).innerHTML="Desmarcar";
+                }
             }
         }
 
@@ -53,6 +57,22 @@
             update();
         }
 
+        function removeAll(){
+            l=[];
+            output.innerHTML="";
+        }
+
+        function un_done(i) {
+            if(!l[i].terminada){
+                document.getElementById("t"+i).style.textDecoration="line-through";
+                document.getElementById("b"+i).innerHTML="Desmarcar";
+                l[i].terminada=true;
+            }else{
+                document.getElementById("t"+i).style.textDecoration="none";
+                document.getElementById("b"+i).innerHTML="Marcar";
+                l[i].terminada=false;
+        }
+    }
     </script>
     <body>
 
