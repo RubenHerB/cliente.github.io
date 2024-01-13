@@ -323,12 +323,13 @@ document.getElementById("letrainput").value="";
         if(t[0]==0&&t[1]==0&&t[2]==0){
             loose(plb);  
         }
+
         if(t[2]<0){
             t[2]=99;
             t[1]--;
             if(t[1]<0){
             t[1]=59;
-            t[2]--;
+            t[0]--;
         }}
         
         document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
