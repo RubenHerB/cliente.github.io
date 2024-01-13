@@ -8,27 +8,37 @@
         <form>
             Agregar nueva tarea: <input type="text" id="input" > <button type="button" onclick="in_add_update()">Agregar</button>
         </form>
-        <div id="tareas"></div>
+        <div id="output"></div>
     <script>
         var l=[];
-        var output=document.getElementById("tareas");
+        var output=document.getElementById("output");
+        var input=document.getElementById("input");
         function obj(t){
             this.texto=t;
             this.terminada=false;
         }
         function inp(){
-
+            if(input.value!=""){
+                return input.value;
+            }else{
+                alert("Introduce el nombre de la tarea para poder añadirla");
+                return false;
+            }
         }
         function add(t){
             l.add(new obj(t));
         }
-        
         function update(){
             output.innerHTML="";
             for(var i=0;i<l.length;i++){
-                output.innerHTML+="<div id=\"t"+i+"\"><button onclick=\"done()\">Marcar<button>";
+                output.innerHTML+="<div id=\"t"+i+"\"><button onclick=\"done("+i+")\">Marcar</button>"+l[i].texto+"<button onclick=\"delete("+i+")\">Borrar</button></div>";
             }
         }
+
+        function in_add_update(){
+
+        }
+
     </script>
     <body>
 
