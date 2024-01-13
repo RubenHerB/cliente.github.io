@@ -21,7 +21,6 @@
             if(input.value!=""){
                 return input.value;
             }else{
-                alert("Introduce el nombre de la tarea para poder añadirla");
                 return false;
             }
         }
@@ -36,7 +35,12 @@
         }
 
         function in_add_update(){
+            let t=inp();
+            if(t){
 
+            }else{
+                alert("Introduce el nombre de la tarea para poder añadirla");
+            }
         }
 
     </script>
