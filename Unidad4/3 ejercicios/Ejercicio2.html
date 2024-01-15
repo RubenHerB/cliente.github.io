@@ -218,6 +218,7 @@
         document.getElementById("mensaje").style.color="green";
         clearInterval(timer);
     }
+
     function reiniciar(){
         t=[1,30,0]; 
         timer=setInterval(r,10);
@@ -234,15 +235,15 @@
         document.getElementById("letrainput").value="";
         document.getElementById("intentos").innerHTML="Te quedan 5 intentos";
         document.getElementById("cabeza").style.border="4px solid black";
-                document.getElementById("torso").style.backgroundColor="black";
-                document.getElementById("brazos").style.backgroundColor="black";
-                document.getElementById("pierna1").style.backgroundColor="black";
-                document.getElementById("pierna2").style.backgroundColor="black";
-                document.getElementById("cabeza").style.display="none";
-                document.getElementById("torso").style.display="none";
-                document.getElementById("brazos").style.display="none";
-                document.getElementById("pierna1").style.display="none";
-                document.getElementById("pierna2").style.display="none";
+        document.getElementById("torso").style.backgroundColor="black";
+        document.getElementById("brazos").style.backgroundColor="black";
+        document.getElementById("pierna1").style.backgroundColor="black";
+        document.getElementById("pierna2").style.backgroundColor="black";
+        document.getElementById("cabeza").style.display="none";
+        document.getElementById("torso").style.display="none";
+        document.getElementById("brazos").style.display="none";
+        document.getElementById("pierna1").style.display="none";
+        document.getElementById("pierna2").style.display="none";
     }
 
     function error(str){
@@ -271,6 +272,7 @@
         err.innerHTML+=(" "+str+" ");
     }
 }
+
 function loose(ar){
     clearInterval(timer);
     document.getElementById("cabeza").style.border="4px solid red";
@@ -305,6 +307,7 @@ function letra(ar){
 }
 document.getElementById("letrainput").value="";
 }
+
         var intentos=5;
         var plb=generar_palabra();
         var plbaux=plb[1];
