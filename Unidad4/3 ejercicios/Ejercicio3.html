@@ -41,17 +41,19 @@
                 var nota=0;
                 for (var i=0; i<preguntas.length; i++) {
 
-                    // var radios = document.getElementsByName('p'+i);
-                    // for (var i = 0; i<4; i++) {
-                    // if (radios[i].checked) {
-                    // res=radios[i].value;
-                    // break;
-                    // }
-                    //     }
+                    var radios = document.getElementsByName('p'+i);
+                    for (var j = 0, length = radios.length; j < length; j++) {
+                    if (radios[j].checked) {
+
+                    res=radios[j].value;
+
+                    break;
+                    }
+                        }
 
                     console.log(res);
                     
-                    if (res==preguntas[i].verdadera){
+                    if (res===preguntas[i].verdadera){
                         document.getElementById("res"+i).innerHTML="Respuesta correcta";
                         document.getElementById("res"+i).style.color="light-green";
                         nota++;
