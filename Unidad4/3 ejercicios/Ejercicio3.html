@@ -23,7 +23,8 @@
             for (var i=0; i<preguntas.length; i++) {
                 output.innerHTML+="<div><fieldset id=\"pregunta"+i+"\"><legend>"+preguntas[i].pregunta+"</legend></fieldset><div id=\"res"+i+"\"></div></div>";
 
-                var p=preguntasshufle(preguntas[i]);    
+                var p=preguntasshufle(preguntas[i]);  
+                console.log(p);  
                 for (var j=0 ; j<p.length ; j++) {
                     document.getElementById("pregunta"+i).innerHTML+="<input type=\"radio\" name=\"p"+i+"\" id=\""+i+"p"+j+"\"  value=\""+p[[j][1]]+"\"><label for=\""+i+"p"+j+"\">"+p[[j][0]]+"</label><br>";
                 }
