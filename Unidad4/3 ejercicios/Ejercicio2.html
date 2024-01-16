@@ -273,9 +273,9 @@
     }
 }
 
-function loose(ar){
-    clearInterval(timer);
-    document.getElementById("cabeza").style.border="4px solid red";
+        function loose(ar){
+            clearInterval(timer);
+            document.getElementById("cabeza").style.border="4px solid red";
                 document.getElementById("torso").style.backgroundColor="red";
                 document.getElementById("brazos").style.backgroundColor="red";
                 document.getElementById("pierna1").style.backgroundColor="red";
@@ -284,29 +284,29 @@ function loose(ar){
                 document.getElementById("final").style.display="block";
                 document.getElementById("mensaje").innerHTML="Has perdido, la palabra era: "+ar[1];
                 document.getElementById("mensaje").style.color="red";
-}
-
-function letra(ar){
-    var l=document.getElementById("letrainput").value;
-    l=l.replace(/[^a-zA-ZñÑ]/g, "")
-    l = l.toLowerCase();
-    console.log(l);
-    if(l!=""){
-    if(ar[2].includes(l)){
-        plbaux=plbaux.split(l).join("");
-        cambiar_letra(ar,l);
-        console.log(plbaux);
-        if(plbaux.length==0){
-            win();
         }
-    }else{
-        error(l);
-    }
-}else{
-    alert("Introduce solo letras");
-}
-document.getElementById("letrainput").value="";
-}
+
+        function letra(ar){
+            var l=document.getElementById("letrainput").value;
+            l=l.replace(/[^a-zA-ZñÑ]/g, "")
+            l = l.toLowerCase();
+            console.log(l);
+            if(l!=""){
+                if(ar[2].includes(l)){
+                    plbaux=plbaux.split(l).join("");
+                    cambiar_letra(ar,l);
+                    console.log(plbaux);
+                    if(plbaux.length==0){
+                        win();
+                    }
+                }else{
+                    error(l);
+                }
+            }else{
+                alert("Introduce solo letras");
+            }
+            document.getElementById("letrainput").value="";
+        }
 
         var intentos=5;
         var plb=generar_palabra();
