@@ -25,7 +25,7 @@
 
                 var p=preguntasshufle(preguntas[i]);    
                 for (var j=0 ; j<p.length ; j++) {
-                    document.getElementById("pregunta"+i).innerHTML+="<input type=\"radio\" id=\""+i+"p"+j+"\"  value=\""+p[[j][1]]+"\"><label for=\""+i+"p"+j+"\">"+p[[j][0]]+"</label><br>";
+                    document.getElementById("pregunta"+i).innerHTML+="<input type=\"radio\" name=\"p"+i+"\" id=\""+i+"p"+j+"\"  value=\""+p[[j][1]]+"\"><label for=\""+i+"p"+j+"\">"+p[[j][0]]+"</label><br>";
                 }
 
                 if (i<(preguntas.length-1)){
