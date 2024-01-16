@@ -38,7 +38,7 @@
             console.log(l);
             output.innerHTML="";
             for(var i=0;i<l.length;i++){
-                output.innerHTML+="<div id=\"t"+i+"\"><button id=\"b"+i+"\" onclick=\"un_done("+i+")\">Marcar</button>"+l[i].texto+"<button onclick=\"remove("+i+")\">Borrar</button></div>";
+                output.innerHTML+="<div id=\"t"+i+"\"><button id=\"b"+i+"\" onclick=\"un_done("+i+")\">Marcar</button><div>"+l[i].texto+"</div><button onclick=\"remove("+i+")\">Borrar</button></div>";
                 if(l[i].terminada){
                     document.getElementById("t"+i).style.textDecoration="line-through";
                     document.getElementById("b"+i).innerHTML="Desmarcar";
