@@ -10,9 +10,12 @@
     </head>
     <body>
         <h1>Test de javascript</h1>
+        <form id="test">
         <div id="preguntas"></div>
+        </form>
         <button onclick="comprobar()">Comprobar respuestas</button>
         <div id="resultado"></div>
+        
         <script type="text/javascript">
             var output = document.getElementById("preguntas");
             function preguntasshufle(obj){
@@ -37,7 +40,7 @@
             function comprobar(){
                 var nota=0;
                 for (var i=0; i<preguntas.length; i++) {
-                    var res=document.getElementById("pregunta"+i).value;
+                    var res=document.forms["test"]["pregunta"+i].value;
                     console.log(res);
                     
                     if (res===preguntas[i].verdadera){
