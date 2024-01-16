@@ -40,7 +40,7 @@
                     var res=document.getElementById("pregunta"+i).value;
                     console.log(res);
                     
-                    if (res==preguntas[i].verdadera){
+                    if (res===preguntas[i].verdadera){
                         document.getElementById("res"+i).innerHTML="Respuesta correcta";
                         document.getElementById("res"+i).style.color="light-green";
                         nota++;
