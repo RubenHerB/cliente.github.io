@@ -40,7 +40,7 @@
             function comprobar(){
                 var nota=0;
                 for (var i=0; i<preguntas.length; i++) {
-                    var res=document.getElementById("pregunta"+i).value;
+                    var res=document.querySelector('input[name="p"'+i+']:checked').value;
                     console.log(res);
                     
                     if (res==preguntas[i].verdadera){
