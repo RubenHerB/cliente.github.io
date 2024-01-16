@@ -1,15 +1,18 @@
 var preguntas=[];
 
-    function pregunta(p,v,f1,f2,f3){
-        this.pregunta = p;
+function pregunta(p,v,f1,f2,f3){
+    this.pregunta = p;
+    this.verdadera=v;
+    this.falsa1=f1;
+    this.falsa2=f2;
+    this.falsa3=f3;
+}
 
-        this.verdadera=v;
+function añadir(p,v,f1,f2,f3){
+    preguntas.push(new pregunta(p,v,f1,f2,f3));
+}
 
-        this.falsa1=f1;
-this.falsa2=f2;
-this.falsa3=f3;
-}function añadir(p,v,f1,f2,f3){preguntas.push(new pregunta(p,v,f1,f2,f3));
-}añadir("¿Cuál de los siguientes NO es un tipo de dato en JavaScript?","Decimal","String","Boolean","Object");
+añadir("¿Cuál de los siguientes NO es un tipo de dato en JavaScript?","Decimal","String","Boolean","Object");
 añadir("¿Cuál es la forma correcta de comentar una línea de código en JavaScript?"," // Comentario"," /* Comentario */"," # Comentario #"," -- Comentario --)");
 añadir("¿Cuál es la función principal de la declaración \"var\" en JavaScript?"," Declarar una variable local"," Declarar una variable global"," Declarar una constante"," Declarar una función");
 añadir("¿Qué método se utiliza para añadir un elemento al final de un array en JavaScript?"," push()"," append()"," addToEnd()"," insertLast()");
