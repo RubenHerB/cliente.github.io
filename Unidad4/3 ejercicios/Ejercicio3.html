@@ -21,7 +21,7 @@
             }
 
             for (var i=0; i<preguntas.length; i++) {
-                output.innerHTML+="<article> ";
+                output.innerHTML+="<article>"+preguntas[i].pregunta+"<br>";
                 var p=preguntasshufle(preguntas[i]);
                 for (var j=0 ; j<p.length ; j++) {
                     output.innerHTML+="<input type=\"radio\" id=\"p"+i+"\"  value=\""+p[[j][1]]+"\"><label for=\"p"+i+"\">"+p[[j][0]]+"</label><br>";
