@@ -10,17 +10,21 @@
     </head>
     <body>
         <h1>Test de javascript</h1>
+        <form>
         <div id="preguntas"></div>
+        
         <script type="text/javascript">
-
+            var output = document.getElementById("preguntas");
             function preguntasshufle(obj){
                 var res=[ [obj.verdadera,1], [obj.falsa1,0], [obj.falsa2,0], [obj.falsa3,0]];
                 return res.sort((a, b) => 0.5 - Math.random());
             }
 
             for (var i=0; i<preguntas.length; i++) {
+
                 console.log(preguntasshufle(preguntas[i]));
             }
         </script>
+        </form>
     </body>
 </html>
