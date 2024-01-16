@@ -13,7 +13,7 @@ function añadir(p,v,f1,f2,f3){
 }
 
 añadir("¿Cuál de los siguientes NO es un tipo de dato en JavaScript?","Decimal","String","Boolean","Object");
-añadir("¿Cuál es la forma correcta de comentar una línea de código en JavaScript?"," // Comentario"," /* Comentario */"," # Comentario #"," -- Comentario --)");
+añadir("¿Cuál es la forma correcta de comentar una línea de código en JavaScript?"," // Comentario"," /* Comentario */"," # Comentario #"," -- Comentario --");
 añadir("¿Cuál es la función principal de la declaración \"var\" en JavaScript?"," Declarar una variable local"," Declarar una variable global"," Declarar una constante"," Declarar una función");
 añadir("¿Qué método se utiliza para añadir un elemento al final de un array en JavaScript?"," push()"," append()"," addToEnd()"," insertLast()");
 añadir("¿Cuál es la función de la sentencia \"if\" en JavaScript?"," Controlar el flujo condicional"," Iterar sobre un bucle"," Definir una función"," Importar bibliotecas externas");
