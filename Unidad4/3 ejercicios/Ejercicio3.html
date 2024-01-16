@@ -16,7 +16,7 @@
         <script type="text/javascript">
             var output = document.getElementById("preguntas");
             function preguntasshufle(obj){
-                var res=[ [obj.verdadera,1], [obj.falsa1,0], [obj.falsa2,0], [obj.falsa3,0]];
+                var res=[ obj.verdadera, obj.falsa1, obj.falsa2, obj.falsa3];
                 return res.sort((a, b) => 0.5 - Math.random());
             }
 
