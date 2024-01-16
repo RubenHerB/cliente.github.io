@@ -39,8 +39,11 @@
                     var res=document.getElementById("pregunta"+i).value;
                     nota+=res;
                     if (res==1){
-                        document.getElementById("res"+i).innerHTML=
+                        document.getElementById("res"+i).innerHTML="Respuesta correcta";
                         document.getElementById("res"+i).style.color="light-green";
+                    }else{
+                        document.getElementById("res"+i).innerHTML="Respuesta incorrecta, la respuesta correcta era"+preguntas.verdadera;
+                        document.getElementById("res"+i).style.color="red";
                     }
                 }
             }
