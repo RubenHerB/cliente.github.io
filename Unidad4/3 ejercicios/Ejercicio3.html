@@ -37,13 +37,15 @@
             function comprobar(){
                 var nota=0;
                 for (var i=0; i<preguntas.length; i++) {
-                    var res=parseInt(document.getElementById("pregunta"+i).value);
-                    nota+=res;
-                    if (res==1){
+                    var res=document.getElementById("pregunta"+i).value;
+                    console.log(res);
+                    
+                    if (res=="1"){
                         document.getElementById("res"+i).innerHTML="Respuesta correcta";
                         document.getElementById("res"+i).style.color="light-green";
+                        nota++;
                     }else{
-                        document.getElementById("res"+i).innerHTML="Respuesta incorrecta, la respuesta correcta era"+preguntas.verdadera;
+                        document.getElementById("res"+i).innerHTML="Respuesta incorrecta, la respuesta correcta era: "+preguntas[i].verdadera;
                         document.getElementById("res"+i).style.color="red";
                     }
                 }
