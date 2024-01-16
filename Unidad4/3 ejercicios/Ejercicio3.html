@@ -41,17 +41,13 @@
                 var nota=0;
                 for (var i=0; i<preguntas.length; i++) {
 
-                    var radios = document.getElementsByName('p'+i);
-
-                    for (var i = 0, length = radios.length; i < length; i++) {
-                    if (radios[i].checked) {
-                        // do whatever you want with the checked radio
-                    res=radios[i].value;
-
-                    // only one radio can be logically checked, don't check the rest
-                    break;
-                    }
-                        }
+                    // var radios = document.getElementsByName('p'+i);
+                    // for (var i = 0; i<4; i++) {
+                    // if (radios[i].checked) {
+                    // res=radios[i].value;
+                    // break;
+                    // }
+                    //     }
 
                     console.log(res);
                     
