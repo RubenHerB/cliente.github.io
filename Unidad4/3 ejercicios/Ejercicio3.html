@@ -21,11 +21,11 @@
             }
 
             for (var i=0; i<preguntas.length; i++) {
-                output.innerHTML+="<div>"+preguntas[i].pregunta+"<br><fieldset id=\"pregunta"+i+"\"></fieldset></div>";
+                output.innerHTML+="<div><fieldset id=\"pregunta"+i+"\"><legend>"+preguntas[i].pregunta+"</legend></fieldset></div>";
 
-                var p=preguntasshufle(preguntas[i]);
+                var p=preguntasshufle(preguntas[i]);    
                 for (var j=0 ; j<p.length ; j++) {
-                    document.getElementById("pregunta"+i).innerHTML+="<input type=\"radio\" id=\"p"+i+"\"  value=\""+p[[j][1]]+"\"><label for=\"p"+i+"\">"+p[[j][0]]+"</label><br>";
+                    document.getElementById("pregunta"+i).innerHTML+="<input type=\"radio\" id=\""+i+"p"+j+"\"  value=\""+p[[j][1]]+"\"><label for=\""+i+"p"+j+"\">"+p[[j][0]]+"</label><br>";
                 }
 
                 if (i<(preguntas.length-1)){
