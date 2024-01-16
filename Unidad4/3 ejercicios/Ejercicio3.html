@@ -12,6 +12,7 @@
         <h1>Test de javascript</h1>
         <div id="preguntas"></div>
         <button onclick="comprobar()">Comprobar respuestas</button>
+        <div id="resultado"></div>
         <script type="text/javascript">
             var output = document.getElementById("preguntas");
             function preguntasshufle(obj){
@@ -20,7 +21,7 @@
             }
 
             for (var i=0; i<preguntas.length; i++) {
-                output.innerHTML+="<div><fieldset id=\"pregunta"+i+"\"><legend>"+preguntas[i].pregunta+"</legend></fieldset></div>";
+                output.innerHTML+="<div><fieldset id=\"pregunta"+i+"\"><legend>"+preguntas[i].pregunta+"</legend></fieldset><div id=\"res"+i+"\"></div></div>";
 
                 var p=preguntasshufle(preguntas[i]);    
                 for (var j=0 ; j<p.length ; j++) {
@@ -29,6 +30,17 @@
 
                 if (i<(preguntas.length-1)){
                     output.innerHTML+="<hr>"
+                }
+            }
+
+            function comprobar(){
+                var nota=0;
+                for (var i=0; i<preguntas.length; i++) {
+                    var res=document.getElementById("pregunta"+i).value;
+                    nota+=res;
+                    if (res==1){
+                        document.getElementById("pregunta"+i).innerHTML+=
+                    }
                 }
             }
         </script>
