@@ -29,4 +29,6 @@ añadir("¿Cómo se declara una variable constante en JavaScript?"," const myVar
 añadir("¿Cuál es la forma correcta de escribir un bucle \"for\" en JavaScript?"," for (i = 0; i < 10; i++)"," loop (i = 0; i < 10; i++)"," for (i = 10; i > 0; i--)"," iterate (i = 0; i < 10; i++)");
 
 preguntas=preguntas.sort((a, b) => 0.5 - Math.random());
-pregunta=pregunta.splice(10,5);
+for(var i=0; i<5; i++){
+    preguntas.pop();
+}
