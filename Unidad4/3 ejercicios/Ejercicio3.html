@@ -26,7 +26,7 @@
                 var p=preguntasshufle(preguntas[i]);  
                 console.log(p);  
                 for (var j=0 ; j<p.length ; j++) {
-                    document.getElementById("pregunta"+i).innerHTML+="<input type=\"radio\" name=\"p"+i+"\" id=\""+i+"p"+j+"\"  value=\""+p[[j][1]]+"\"><label for=\""+i+"p"+j+"\">"+p[[j][0]]+"</label><br>";
+                    document.getElementById("pregunta"+i).innerHTML+="<input type=\"radio\" name=\"p"+i+"\" id=\""+i+"p"+j+"\"  value=\""+p[j][1]+"\"><label for=\""+i+"p"+j+"\">"+p[j][0]+"</label><br>";
                 }
 
                 if (i<(preguntas.length-1)){
@@ -37,7 +37,7 @@
             function comprobar(){
                 var nota=0;
                 for (var i=0; i<preguntas.length; i++) {
-                    var res=document.getElementById("pregunta"+i).value;
+                    var res=parseInt(document.getElementById("pregunta"+i).value);
                     nota+=res;
                     if (res==1){
                         document.getElementById("res"+i).innerHTML="Respuesta correcta";
