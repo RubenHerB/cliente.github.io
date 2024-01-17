@@ -247,6 +247,7 @@
     }
 
     function error(str){
+        if(!err.innerHTML.includes(" "+str+" ")){
         intentos--;
         document.getElementById("intentos").innerHTML="Te quedan "+intentos+" intentos";
         switch(intentos){
@@ -268,7 +269,7 @@
                 break;
     }
     var err=document.getElementById("fallos");
-    if(!err.innerHTML.includes(" "+str+" ")){
+    
         err.innerHTML+=(" "+str+" ");
     }
 }
