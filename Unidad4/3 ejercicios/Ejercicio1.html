@@ -39,7 +39,7 @@
             console.log(l);
             output.innerHTML="";
             for(var i=0;i<l.length;i++){
-                output.innerHTML+="<div id=\"t"+i+"\"><button id=\"b"+i+"\" onclick=\"un_done("+i+")\">Marcar</button><div>"+l[i].texto+"</div><button onclick=\"remove("+i+")\">Borrar</button></div>";
+                output.innerHTML+="<div id=\"t"+i+"\"><button id=\"b"+i+"\" onclick=\"un_done("+i+")\">Marcar</button><div id=\"d"+i+"\">"+l[i].texto+"</div><button onclick=\"remove("+i+")\">Borrar</button></div>";
                 if(l[i].terminada){
                     document.getElementById("t"+i).style.textDecoration="line-through";
                     document.getElementById("b"+i).innerHTML="Desmarcar";
@@ -69,12 +69,12 @@
 
         function un_done(i) {
             if(!l[i].terminada){
-                document.getElementById("t"+i).style.textDecoration="line-through";
+                document.getElementById("d"+i).style.textDecoration="line-through";
                 document.getElementById("t"+i).style.backgroundColor="lightgreen";
                 document.getElementById("b"+i).innerHTML="Desmarcar";
                 l[i].terminada=true;
             }else{
-                document.getElementById("t"+i).style.textDecoration="none";
+                document.getElementById("d"+i).style.textDecoration="none";
                 document.getElementById("t"+i).style.backgroundColor="white";
                 document.getElementById("b"+i).innerHTML="Marcar";
                 l[i].terminada=false;
