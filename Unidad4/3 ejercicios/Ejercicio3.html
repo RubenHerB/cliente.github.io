@@ -8,10 +8,23 @@
             button {margin-left: 5px; margin-right: 5px}
             .tempo{ position: sticky;top: 5px;text-align: right;}
             .green{color: green;}
+            .orange{color: orange}
+            @-webkit-keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.3; }
+}
+
+.red {
+    color: red;
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+  -webkit-animation-duration: 1.7s;
+}
         </style>
     </head>
     <body>
-        <div class="tempo"><h2 id="temp" class="green"></h2></div>
+        <div class="tempo"><h2 id="temp" class="red"></h2></div>
         <h1>Test de javascript</h1>        
         <form id="test">
         <div id="preguntas"></div>
