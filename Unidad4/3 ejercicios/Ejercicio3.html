@@ -28,8 +28,9 @@
         <div id="preguntas"></div>
         </form>
         <br>
-        <button onclick="comprobar()">Comprobar respuestas</button>
+        <button id="comp" onclick="comprobar()">Comprobar respuestas</button>
         <h2 id="resultado"></h2>
+        <button id="rel" style="display: none;" onclick="reload()">Hacer otro test</button>
         
         <script type="text/javascript">
             var output = document.getElementById("preguntas");
