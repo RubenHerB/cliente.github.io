@@ -54,6 +54,9 @@
             }
 
             function comprobar(){
+                clearInterval(timer);
+                document.getElementById("com").style.display="none";
+                document.getElementById("rel").style.display="block";
                 var nota=0;
                 var res="";
                 for (var i=0; i<preguntas.length; i++) {
