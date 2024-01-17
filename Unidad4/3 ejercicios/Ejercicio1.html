@@ -5,7 +5,7 @@
         <title>Lista</title>
         <style>
             button {margin-left: 5px; margin-right: 5px; width: 100px;border-radius: 10px}
-            #output div{border: 1px solid black;padding: 5px;margin: 10px auto 10px auto; width:70%; text-align: center;overflow:visible; display: flex;flex-direction: row;
+            #output div{border: 2px solid black;padding: 5px;margin: 10px auto 10px auto; width:70%; text-align: center;overflow:visible; display: flex;flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;border-radius:10px}
     #output div div{border:none; text-align: center; margin-left: auto; margin-right: auto}
@@ -70,12 +70,12 @@
         function un_done(i) {
             if(!l[i].terminada){
                 document.getElementById("t"+i).style.textDecoration="line-through";
-                document.getElementById("t"+i).style.border="1px solid lightgreen";
+                document.getElementById("t"+i).style.backgroundColor="lightgreen";
                 document.getElementById("b"+i).innerHTML="Desmarcar";
                 l[i].terminada=true;
             }else{
                 document.getElementById("t"+i).style.textDecoration="none";
-                document.getElementById("t"+i).style.border="1px solid black";
+                document.getElementById("t"+i).style.backgroundColor="white";
                 document.getElementById("b"+i).innerHTML="Marcar";
                 l[i].terminada=false;
         }
