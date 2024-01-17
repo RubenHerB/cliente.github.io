@@ -57,14 +57,14 @@
                     
                     if (res===preguntas[i].verdadera){
                         document.getElementById("res"+i).innerHTML="Respuesta correcta";
-                        document.getElementById("res"+i).style.color="light-green";
+                        document.getElementById("res"+i).style.color="lightgreen";
                         nota++;
                     }else{
                         document.getElementById("res"+i).innerHTML="Respuesta incorrecta, la respuesta correcta era: "+preguntas[i].verdadera;
                         document.getElementById("res"+i).style.color="red";
                     }
                 }
-                document.getElementById("resultado").innerHTML="Tu nota es: "+nota+"/10";
+                document.getElementById("resultado").innerHTML="Tu nota es: "+nota+"/10, estas "+(nota>=5?"aprobado":"suspenso");
             }
         </script>
     </body>
