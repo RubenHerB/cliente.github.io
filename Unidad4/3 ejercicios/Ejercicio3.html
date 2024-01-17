@@ -33,6 +33,7 @@
         <button id="rel" style="display: none;" onclick="reload()">Hacer otro test</button>
         
         <script type="text/javascript">
+            var tempo=document.getElementById("temp");
             var output = document.getElementById("preguntas");
             function preguntasshufle(obj){
                 console.log(obj.verdadera);
@@ -55,7 +56,7 @@
 
             function comprobar(){
                 clearInterval(timer);
-                document.getElementById("com").style.display="none";
+                document.getElementById("comp").style.display="none";
                 document.getElementById("rel").style.display="block";
                 var nota=0;
                 var res="";
@@ -100,7 +101,9 @@
             t[1]=59;
             t[0]--;
         }}
-        
+        if(t[0]<1 && t[1]>30 && tempo.className=="green"){
+
+        }
         document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
     }
     function reload(){
