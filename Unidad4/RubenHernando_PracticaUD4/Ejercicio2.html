@@ -247,6 +247,7 @@
     }
 
     function error(str){
+        var err=document.getElementById("fallos");
         if(!err.innerHTML.includes(" "+str+" ")){
         intentos--;
         document.getElementById("intentos").innerHTML="Te quedan "+intentos+" intentos";
@@ -267,9 +268,7 @@
             case 0:
                 loose(plb);
                 break;
-    }
-    var err=document.getElementById("fallos");
-    
+    }   
         err.innerHTML+=(" "+str+" ");
     }
 }
