@@ -66,6 +66,26 @@
                 }
                 document.getElementById("resultado").innerHTML="Tu nota es: "+nota+"/10, estas "+(nota>=5?"aprobado":"suspenso");
             }
+
+            t=[1,30,0];     
+        
+        function r(){  
+        t[2]--;
+        if(t[0]==0&&t[1]==0&&t[2]==0){
+            comprobar();  
+        }
+
+        if(t[2]<0){
+            t[2]=99;
+            t[1]--;
+            if(t[1]<0){
+            t[1]=59;
+            t[0]--;
+        }}
+        
+        document.getElementById("temp").innerHTML="Tiempo restante: "+("0" + t[0]).slice(-2)+":"+("0" + t[1]).slice(-2)+":"+("0" + t[2]).slice(-2) ;
+    }
+    var timer=setInterval(r,10);
         </script>
     </body>
 </html>
