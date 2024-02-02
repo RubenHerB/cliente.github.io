@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en ralla</title>
+    <link rel="stylesheet" href="TresenRalla.css">
+</head>
+<body>
+    <h1 id="mensaje">Turno del jugador 1</h1>
+    <div class="grid">
+        <div class="gridelement1 gridelement" id="gridelement1" onclick="jugada(1)"></div>
+        <div class="gridelement2 gridelement" id="gridelement2" onclick="jugada(2)"></div>
+        <div class="gridelement3 gridelement" id="gridelement3" onclick="jugada(3)"></div>
+        <div class="gridelement4 gridelement" id="gridelement4" onclick="jugada(4)"></div>
+        <div class="gridelement5 gridelement" id="gridelement5" onclick="jugada(5)"></div>
+        <div class="gridelement6 gridelement" id="gridelement6" onclick="jugada(6)"></div>
+        <div class="gridelement7 gridelement" id="gridelement7" onclick="jugada(7)"></div>
+        <div class="gridelement8 gridelement" id="gridelement8" onclick="jugada(8)"></div>
+        <div class="gridelement9 gridelement" id="gridelement9" onclick="jugada(9)"></div>
+    </div>
+    <button type="button" onclick="reset()">Reiniciar</button>
+</body>
+<script type="text/javascript">
+    cases=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8], [2,4,6]];
+    var c=0;
+    var ju=[0,0,0,0,0,0,0,0,0];
+    function reset(){
+        c=0;
+        ju=[0,0,0,0,0,0,0,0,0];
+        document.getElementById("mensaje").innerHTML="Turno del jugador 1";
+        for(let i=1; i<=9; i++){
+            document.getElementById("gridelement"+i).innerHTML="";
+            document.getElementById("mensaje").style.color="black";
+        }
+    }
+
+    function comprobar(){
+        let sum=0;
+        for(let i=0; i<cases.length; i++){
+            sum=0;
+            for(let j=0; j<cases[0].length; j++){
+                sum+=ju[cases[i][j]];
+            }
+            if(sum==3){
+                fin(1);
+                break;
+            }else if(sum==-3){
+                fin(2);
+                break;
+            }
+        }
+    }
+
+    function jugada(n){
+        if(ju[(n-1)]==0){
+        c++;
+        if(c%2!=0){
+            document.getElementById("gridelement"+n).innerHTML="<div class='cross'>";
+            document.getElementById("mensaje").innerHTML="Turno del jugador 2";
+            ju[(n-1)]=1;
+        }else{
+            document.getElementById("gridelement"+n).innerHTML="<div class='circle'>";
+            document.getElementById("mensaje").innerHTML="Turno del jugador 1";
+            ju[(n-1)]=-1;
+        }
+        comprobar();
+    }
+    if(c==9){
+        fin('t');
+    }
+    }
+
+    function fin(f){
+        for(var i=0;i<ju.length;i++){
+            ju[i]=2;
+        }
+        switch(f){
+            case 1:
+                document.getElementById("mensaje").innerHTML="Ha ganado el jugador 1";
+                document.getElementById("mensaje").style.color="green";
+                break;
+            case 2:
+                document.getElementById("mensaje").innerHTML="Ha ganado el jugador 2";
+                document.getElementById("mensaje").style.color="blue";
+                break;
+            case 't':
+                document.getElementById("mensaje").innerHTML="Tablas!";
+                document.getElementById("mensaje").style.color="orange";
+                break;
+        }
+    }
+</script>
+</html>

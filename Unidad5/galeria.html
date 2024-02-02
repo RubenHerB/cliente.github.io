@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css"> 
+        .img{max-width: 400px;max-height: 400px;margin-left: auto; margin-right: auto; margin-top: 100px;}
+        .img img{max-width: 400px;max-height: 400px; }
+        center{display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="img" id="img"><img src="galeria/1.jpg"></div>
+    <center><button onclick="fin()">Parar timer</button><button onclick="iz()">←</button><div class="gal" id="galp"><div id="gal"></div></div><button onclick="dere()">→</button><button onclick="ini()">Iniciar timer</button></center>
+</body>
+<script type="text/javascript">
+    var gal=document.getElementById("gal");
+    var c=[1,2,3];
+
+    function dispgal(){
+        gal.innerHTML="";
+        gal.innerHTML += "<img onclick='disp("+c[0]+")' style='width: 90px;height: 90px;' src='galeria/"+c[0]+".jpg'>";
+        gal.innerHTML += "<img onclick='disp("+c[1]+")' style='width: 90px;height: 90px;' src='galeria/"+c[1]+".jpg'>";
+        gal.innerHTML += "<img onclick='disp("+c[2]+")' style='width: 90px;height: 90px;' src='galeria/"+c[2]+".jpg'>";
+
+    }
+
+    function disp(i) {
+        document.getElementById("img").innerHTML = "<img src='galeria/"+i+".jpg'>";
+    }
+    console.log(c);
+    dispgal();
+    function dere(){
+        c[0]++;
+        c[1]++;
+        c[2]++; 
+        for(var i=0;i<c.length;i++){
+            if(c[i]>8) {c[i]=1}
+        }
+        console.log(c);
+        dispgal();
+    }
+    function iz(){
+        c[0]--;
+        c[1]--;
+        c[2]--;
+        for(var i=0;i<c.length;i++){
+            if(c[i]<1) {c[i]=8}
+        }
+        console.log(c);
+        dispgal();
+        
+    }
+
+    function ini(){
+    var timer=setInterval(dere,100);
+    }
+    function fin(){
+        clearInterval(timer);
+    }
+</script>
+</html>

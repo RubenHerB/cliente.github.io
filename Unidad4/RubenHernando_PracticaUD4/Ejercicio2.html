@@ -183,95 +183,96 @@
                 }
         }
     }
-    function cambiar_palabra(ar){
-        for(var i=0;i<ar[2].length;i++){
-            document.getElementById("l"+i).innerHTML=ar[2][i];
-            document.getElementById("l"+i).style.color="green";
-    }
-}
 
-    function palabra(ar){
-        var adi=document.getElementById("palabrainput").value;
-        
-        adi=adi.replace(/[^a-zA-ZñÑ]/g, "")
-        adi = adi.toLowerCase();
-        console.log(adi);
-        if(adi.length==ar[1].length){
-            console.log("entro");
-        if(ar[1]==adi){
-            console.log("correcto");
-            cambiar_palabra(ar);
-            win();
-        }else{
-            error(adi);
+        function cambiar_palabra(ar){
+            for(var i=0;i<ar[2].length;i++){
+                document.getElementById("l"+i).innerHTML=ar[2][i];
+                document.getElementById("l"+i).style.color="green";
         }
-    }else{
-        alert("La longitud de la palabra introducida no es correcta (los numeros, caracteres especiales y espacios no cuentan como letra)");
-        document.getElementById("palabrainput").value=adi;
-    }
     }
 
-    function win(){
-        document.getElementById("input").style.display="none";
-        document.getElementById("final").style.display="block";
-        document.getElementById("mensaje").innerHTML="Felicidades, has ganado";
-        document.getElementById("mensaje").style.color="green";
-        clearInterval(timer);
-    }
+        function palabra(ar){
+            var adi=document.getElementById("palabrainput").value;
 
-    function reiniciar(){
-        t=[1,30,0]; 
-        timer=setInterval(r,10);
-        document.getElementById("fallos").innerHTML="";
-        intentos=5;
-        plb=generar_palabra();
-        plbaux=plb;
-        generar_espacios(plb);
-        aciertos=0;
-        console.log(plb);
-        document.getElementById("input").style.display="block";
-        document.getElementById("final").style.display="none";
-        document.getElementById("palabrainput").value="";
-        document.getElementById("letrainput").value="";
-        document.getElementById("intentos").innerHTML="Te quedan 5 intentos";
-        document.getElementById("cabeza").style.border="4px solid black";
-        document.getElementById("torso").style.backgroundColor="black";
-        document.getElementById("brazos").style.backgroundColor="black";
-        document.getElementById("pierna1").style.backgroundColor="black";
-        document.getElementById("pierna2").style.backgroundColor="black";
-        document.getElementById("cabeza").style.display="none";
-        document.getElementById("torso").style.display="none";
-        document.getElementById("brazos").style.display="none";
-        document.getElementById("pierna1").style.display="none";
-        document.getElementById("pierna2").style.display="none";
-    }
+            adi=adi.replace(/[^a-zA-ZñÑ]/g, "")
+            adi = adi.toLowerCase();
+            console.log(adi);
+            if(adi.length==ar[1].length){
+                console.log("entro");
+                if(ar[1]==adi){
+                    console.log("correcto");
+                    cambiar_palabra(ar);
+                    win();
+                }else{
+                    error(adi);
+                }
+            }else{
+                alert("La longitud de la palabra introducida no es correcta (los numeros, caracteres especiales y espacios no cuentan como letra)");
+                document.getElementById("palabrainput").value=adi;
+            }
+        }
 
-    function error(str){
-        var err=document.getElementById("fallos");
-        if(!err.innerHTML.includes(" "+str+" ")){
-        intentos--;
-        document.getElementById("intentos").innerHTML="Te quedan "+intentos+" intentos";
-        switch(intentos){
-            case 4:
-                document.getElementById("cabeza").style.display="inline-block";
-                break;
-            case 3:
-                document.getElementById("torso").style.display="inline-block";
-                break;
-            case 2:
-                document.getElementById("brazos").style.display="inline-block";
-                break;
-            case 1:
-                document.getElementById("pierna1").style.display="inline-block";
-                document.getElementById("pierna2").style.display="inline-block";
-                break;
-            case 0:
-                loose(plb);
-                break;
-    }   
-        err.innerHTML+=(" "+str+" ");
+        function win(){
+            document.getElementById("input").style.display="none";
+            document.getElementById("final").style.display="block";
+            document.getElementById("mensaje").innerHTML="Felicidades, has ganado";
+            document.getElementById("mensaje").style.color="green";
+            clearInterval(timer);
+        }
+
+        function reiniciar(){
+            t=[1,30,0]; 
+            timer=setInterval(r,10);
+            document.getElementById("fallos").innerHTML="";
+            intentos=5;
+            plb=generar_palabra();
+            plbaux=plb[1];
+            generar_espacios(plb);
+            aciertos=0;
+            console.log(plb);
+            document.getElementById("input").style.display="block";
+            document.getElementById("final").style.display="none";
+            document.getElementById("palabrainput").value="";
+            document.getElementById("letrainput").value="";
+            document.getElementById("intentos").innerHTML="Te quedan 5 intentos";
+            document.getElementById("cabeza").style.border="4px solid black";
+            document.getElementById("torso").style.backgroundColor="black";
+            document.getElementById("brazos").style.backgroundColor="black";
+            document.getElementById("pierna1").style.backgroundColor="black";
+            document.getElementById("pierna2").style.backgroundColor="black";
+            document.getElementById("cabeza").style.display="none";
+            document.getElementById("torso").style.display="none";
+            document.getElementById("brazos").style.display="none";
+            document.getElementById("pierna1").style.display="none";
+            document.getElementById("pierna2").style.display="none";
+        }
+
+        function error(str){
+            var err=document.getElementById("fallos");
+            if(!err.innerHTML.includes(" "+str+" ")){
+            intentos--;
+            document.getElementById("intentos").innerHTML="Te quedan "+intentos+" intentos";
+            switch(intentos){
+                case 4:
+                    document.getElementById("cabeza").style.display="inline-block";
+                    break;
+                case 3:
+                    document.getElementById("torso").style.display="inline-block";
+                    break;
+                case 2:
+                    document.getElementById("brazos").style.display="inline-block";
+                    break;
+                case 1:
+                    document.getElementById("pierna1").style.display="inline-block";
+                    document.getElementById("pierna2").style.display="inline-block";
+                    break;
+                case 0:
+                    loose(plb);
+                    break;
+        }   
+            err.innerHTML+=(" "+str+" ");
+        }
     }
-}
 
         function loose(ar){
             clearInterval(timer);
@@ -313,12 +314,6 @@
         var plbaux=plb[1];
         generar_espacios(plb);
         console.log(plb);
-
-        
-
-
-
-
 
         t=[1,30,0];     
         
