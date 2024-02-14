@@ -57,7 +57,10 @@
         c++;
         if(c%2!=0){
             document.getElementById("gridelement"+n).innerHTML="<div class='cross'>";
-            document.getElementById("mensaje").innerHTML="Turno del jugador 2 <button type=\"button\" onclick=\"maquina()\">Jugar como maquina</button>";
+            document.getElementById("mensaje").innerHTML="Turno del jugador 2 ";
+            if(c!=9){
+                document.getElementById("mensaje").innerHTML+="<button type=\"button\" onclick=\"maquina()\">Jugar como maquina</button>";
+            }
             ju[(n-1)]=1;
         }else{
             document.getElementById("gridelement"+n).innerHTML="<div class='circle'>";
