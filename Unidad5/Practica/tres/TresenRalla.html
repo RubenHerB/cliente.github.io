@@ -57,7 +57,7 @@
         c++;
         if(c%2!=0){
             document.getElementById("gridelement"+n).innerHTML="<div class='cross'>";
-            document.getElementById("mensaje").innerHTML="Turno del jugador 2";
+            document.getElementById("mensaje").innerHTML="Turno del jugador 2 <button type=\"button\" onclick=\"maquina()\">Jugar como maquina</button>";
             ju[(n-1)]=1;
         }else{
             document.getElementById("gridelement"+n).innerHTML="<div class='circle'>";
@@ -92,6 +92,15 @@
                 document.getElementById("mensaje").style.color="orange";
                 break;
         }
+    }
+
+    function maquina(){
+        var pos=false;
+        var n=0;
+        do{
+            n=Math.ceil(Math.random()*9);
+            por=jugada(n);
+        }while(!pos);
     }
 </script>
 </html>
