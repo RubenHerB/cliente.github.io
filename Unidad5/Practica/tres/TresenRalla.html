@@ -25,6 +25,7 @@
     cases=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8], [2,4,6]];
     var c=0;
     var ju=[0,0,0,0,0,0,0,0,0];
+    var gan=false;
     function reset(){
         c=0;
         ju=[0,0,0,0,0,0,0,0,0];
@@ -32,6 +33,7 @@
         for(let i=1; i<=9; i++){
             document.getElementById("gridelement"+i).innerHTML="";
             document.getElementById("mensaje").style.color="black";
+            gan=false;
         }
     }
 
@@ -44,9 +46,11 @@
             }
             if(sum==3){
                 fin(1);
+                return true;
                 break;
             }else if(sum==-3){
                 fin(2);
+                return true;
                 break;
             }
         }
@@ -67,8 +71,8 @@
             document.getElementById("mensaje").innerHTML="Turno del jugador 1";
             ju[(n-1)]=-1;
         }
-        comprobar();
-        if(c==9){
+        gan=comprobar();
+        if(c==9 && !gan){
         fin('t');
     }
         return true;
