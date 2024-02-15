@@ -46,7 +46,7 @@
     }
 
     function mayus(){
-        if(/^[A-Z]*$/.test(input.value)){
+        if(/[A-Z]/.test(input.value)){
             document.getElementById("mayus").style.color="black";
             document.getElementById("mayus").style.textDecoration="none";
             document.getElementById("mayusimg").innerHTML=tick;
@@ -61,7 +61,7 @@
         len();
         mayus();
         console.log(input.value);
-        console.log(/^[A-Z]*$/.test(input.value));
+        console.log(/[A-Z]/.test(input.value));
     }
 </script>
 </html>
