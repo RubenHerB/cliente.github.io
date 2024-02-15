@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h1{background-color:yellow}
+        h1{background-color: #ffb921}
     </style>
 </head>
 <body>
