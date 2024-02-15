@@ -31,5 +31,18 @@
     document.getElementById("lonimg").innerHTML+=cross;
     document.getElementById("numimg").innerHTML+=cross;
     document.getElementById("simimg").innerHTML+=cross;
+    var input=document.getElementById("in");
+
+    function len(){
+        if(input.value.length>=8 && input.value.length<=20){
+            document.getElementById("lon").style.color="black";
+            document.getElementById("lon").style.textDecoration="none";
+            document.getElementById("lonimg").innerHTML=tick;
+        }else{
+            document.getElementById("lon").style.color="#3f3f3f";
+            document.getElementById("lon").style.textDecoration="line-through";
+            document.getElementById("lonimg").innerHTML=cross;
+        }
+    }
 </script>
 </html>
