@@ -6,11 +6,14 @@
     <title>Document</title>
     <style>
         h1{background-color: #ffb921}
+        .grid{display:grid;}
     </style>
 </head>
 <body>
     <h1>Generador de formularios</h1>
+    <div id="grid">
     <div id="control" class="control"><button onclick="crear()">Crear Pregunta</button><button onclick="generar()">Generar formulario</button></div>
     <div id="content" class="content"></div>
+</div>
 </body>
 </html>
