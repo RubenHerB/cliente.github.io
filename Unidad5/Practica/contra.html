@@ -44,5 +44,22 @@
             document.getElementById("lonimg").innerHTML=cross;
         }
     }
+
+    function mayus(){
+        if(/^[A-Z]*$/.test(input.value)){
+            document.getElementById("mayus").style.color="black";
+            document.getElementById("mayus").style.textDecoration="none";
+            document.getElementById("mayusimg").innerHTML=tick;
+        }else{
+            document.getElementById("mayus").style.color="#3f3f3f";
+            document.getElementById("mayus").style.textDecoration="line-through";
+            document.getElementById("mayusimg").innerHTML=cross;
+        }
+    }
+
+    input.addEventListener("change", (event) => {
+        len();
+        mayus();
+    });
 </script>
 </html>
