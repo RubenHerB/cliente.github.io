@@ -57,9 +57,35 @@
         }
     }
 
+    function num(){
+        if(/[0-9]/.test(input.value)){
+            document.getElementById("num").style.color="black";
+            document.getElementById("num").style.textDecoration="none";
+            document.getElementById("numimg").innerHTML=tick;
+        }else{
+            document.getElementById("num").style.color="#3f3f3f";
+            document.getElementById("num").style.textDecoration="line-through";
+            document.getElementById("numimg").innerHTML=cross;
+        }
+    }
+
+    function sim(){
+        if(/[^\w\s]/.test(input.value)){
+            document.getElementById("sim").style.color="black";
+            document.getElementById("sim").style.textDecoration="none";
+            document.getElementById("simimg").innerHTML=tick;
+        }else{
+            document.getElementById("sim").style.color="#3f3f3f";
+            document.getElementById("sim").style.textDecoration="line-through";
+            document.getElementById("simimg").innerHTML=cross;
+        }
+    }
+
     function newin(){
         len();
         mayus();
+        num();
+        sim();
         console.log(input.value);
         console.log(/[A-Z]/.test(input.value));
     }
