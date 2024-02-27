@@ -57,11 +57,11 @@ $(document).ready(function() {
             dataType: 'jsonp',
             success: function(data) {
                 console.log(data.query.search);
+                $("#datalistOptions").html("");
                 $.each(data.query.search,function( key, value){
-                    console.log(value['title']);
-                    $("#data")
+
+                    $("#datalistOptions").append("<option value=\""+value['title']+"\">");
                 });
-                // <option value="San Francisco">
             },
             error: function(errorMessage) {
                  console.log("damnn");
