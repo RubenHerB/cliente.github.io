@@ -10,7 +10,7 @@
 <body>
     <div id="con" class="container-sm">
     <form id="formulario">
-        <input class="form-control form-control-lg" type="text" aria-label=".form-control-lg">
+        <input id="inp" class="form-control form-control-lg" type="text" aria-label=".form-control-lg">
     </form>
 <button type="submit" id="comp" class="btn btn-primary">Comprobar</button>
 </div>
@@ -22,9 +22,10 @@
     {
         $("#comp").click(function()
         {
-            var val=$("#comp").val();
+            var val=$("#inp").val();
+            console.log(val); 
             if(val==""){
-                console.log(val);  
+                 
                 var inner=$("con").html();
                 $("con").html(inner+"<p>No hay nada</p>");
             }
