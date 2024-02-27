@@ -24,7 +24,8 @@
     {
         $("#cambiar").click(function()
         {
-            $("#contenedor").css("background-color","red");
+            var rand=Math.floor(Math.random()*16777216).toString(16);
+            $("#contenedor").css("background-color","#"+rand);
         }
         );
     });
