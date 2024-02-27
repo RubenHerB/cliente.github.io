@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container-sm">
+    <div id="con" class="container-sm">
     <form id="formulario">
         <input class="form-control form-control-lg" type="text" aria-label=".form-control-lg">
     </form>
@@ -20,7 +20,14 @@
     
     $(document).ready(function()
     {
-        
+        $("#comp").click(function()
+        {
+            var val=$("#comp").val();
+            if(val==""){
+                console.log("entro");
+                $("con").html($("con").html()+"<p>No hay nada</p>");
+            }
+        });
     });
 </script>
 </html>
