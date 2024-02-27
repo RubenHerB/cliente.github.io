@@ -17,15 +17,25 @@
     <div class="contenedor" id="contenedor">
         esto es un contenedor
 </div>
-<button type="button" id="cambiar">Cambiar color</button>
+<button type="button" id="cambiar">Ocultar</button>
 </body>
 <script>
+    // $(document).ready(function()
+    // {
+    //     $("#cambiar").click(function()
+    //     {
+    //         var rand=Math.floor(Math.random()*16777216).toString(16);
+    //         $("#contenedor").css("background-color","#"+rand);
+    //     }
+    //     );
+    // });
+    
     $(document).ready(function()
     {
         $("#cambiar").click(function()
         {
             var rand=Math.floor(Math.random()*16777216).toString(16);
-            $("#contenedor").css("background-color","#"+rand);
+            $("#contenedor").css("display","none");
         }
         );
     });
