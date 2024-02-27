@@ -58,7 +58,7 @@ $(document).ready(function() {
             success: function(data) {
                 console.log(data.query.search);
                 $.each(data.query.search,function( key, value){
-                    console.log(key+":"+value);
+                    console.log(value['title']);
                 });
             },
             error: function(errorMessage) {
