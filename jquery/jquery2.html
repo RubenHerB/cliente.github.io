@@ -12,7 +12,9 @@
     <form id="formulario">
         <br>
         <input id="inp" class="form-control form-control-lg" list="datalistOptions" type="text" aria-label=".form-control-lg">
-        
+        <datalist id="datalistOptions">
+
+        </datalist>
     </form>
     <br>        
 <button type="submit" id="comp" class="btn btn-primary">Comprobar</button>
@@ -54,7 +56,7 @@ $(document).ready(function() {
             url: url,
             dataType: 'jsonp',
             success: function(data) {
-                console.log(data.query.searchinfo.totalhits);
+                console.log(data.query.search);
             },
             error: function(errorMessage) {
                  console.log("damnn");
