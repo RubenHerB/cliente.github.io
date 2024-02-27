@@ -22,12 +22,9 @@
     {
         $("#comp").click(function()
         {
-            var val=$("#inp").val();
-            console.log(val); 
-            if(val==""){
-                 
-                var inner=$("con").html();
-                $("con").html(inner+"<p>No hay nada</p>");
+
+            if($("#inp").val()==""){
+                $("#inp").addClass(is-invalid);
             }
         });
     });
