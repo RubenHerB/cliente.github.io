@@ -17,6 +17,16 @@
     <div class="contenedor" id="contenedor">
         esto es un contenedor
 </div>
-<button type="button" onclick="cambiar()">Cambiar color</button>
+<button type="button" id="cambiar">Cambiar color</button>
 </body>
+<script>
+    $("#cambiar").ready(function()
+    {
+        $("#cambiar").click(function()
+        {
+            $("#contenedor").css("background-color","fabada");
+        }
+        );
+    });
+</script>
 </html>
