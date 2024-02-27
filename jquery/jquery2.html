@@ -56,7 +56,7 @@ $(document).ready(function() {
             url: url,
             dataType: 'jsonp',
             success: function(data) {
-                console.log(data.query.search);
+                console.log(data.query.search.title);
             },
             error: function(errorMessage) {
                  console.log("damnn");
