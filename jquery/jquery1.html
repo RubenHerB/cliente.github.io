@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         .contenedor{
             width: 500px;
             height: 500px;
-            background-color: aqua;
+            
         }
     </style>
 </head>
 <body>
-    <div class="contenedor" id="contenedor">
+    <div class="contenedor" id="contenedor" style="background-color: aqua;">
         esto es un contenedor
 </div>
 <button type="button" id="cambiar">Cambiar color</button>
 </body>
 <script>
-    $("#cambiar").ready(function()
+    $(document).ready(function()
     {
         $("#cambiar").click(function()
         {
