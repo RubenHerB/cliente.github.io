@@ -10,8 +10,10 @@
 <body>
     <div id="con" class="container-sm">
     <form id="formulario">
+        <br>
         <input id="inp" class="form-control form-control-lg" type="text" aria-label=".form-control-lg">
     </form>
+    <br>        
 <button type="submit" id="comp" class="btn btn-primary">Comprobar</button>
 </div>
 </body>
@@ -24,9 +26,9 @@
         {
 
             if($("#inp").val()==""){
-                $(this).removeClass( "is-valid" ).addClass("is-invalid");
+                $("#inp").removeClass( "is-valid" ).addClass("is-invalid");
             }else{
-                $(this).removeClass( "is-invalid" ).addClass("is-valid");
+                $("#inp").removeClass( "is-invalid" ).addClass("is-valid");
             }
         });
     });
