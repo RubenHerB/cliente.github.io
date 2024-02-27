@@ -24,8 +24,9 @@
         {
 
             if($("#inp").val()==""){
-                console.log($(this).val());
-                $(this).addClass("is-invalid");
+                $(this).removeClass( "is-valid" ).addClass("is-invalid");
+            }else{
+                $(this).removeClass( "is-invalid" ).addClass("is-valid");
             }
         });
     });
