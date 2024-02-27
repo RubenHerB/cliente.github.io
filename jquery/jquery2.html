@@ -25,7 +25,8 @@
             var val=$("#comp").val();
             if(val==""){
                 console.log(val);  
-                $("con").html($("con").html()+"<p>No hay nada</p>");
+                var inner=$("con").html();
+                $("con").html(inner+"<p>No hay nada</p>");
             }
         });
     });
